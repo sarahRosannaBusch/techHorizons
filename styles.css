@@ -1,0 +1,176 @@
+* /* padding and border are included in total width and height of elements */
+{
+    box-sizing: border-box;
+}
+
+body
+{
+  background-color: black;
+  font-family: sans-serif;
+  font-size: 14;
+  color: lightgrey;
+  margin: 0px;
+  padding: 0px;
+}
+
+/****************************** Header Styles *********************************/
+
+div#header
+{
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+h1.title
+{
+  font-size: 35px;
+  color: white;
+  font-family: sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+p.subtitle
+{
+  font-size: 15px;
+  color: silver;
+  font-family: cursive;
+  padding: 0px;
+  margin: 0px;
+}
+
+img#logo
+{
+  width: 100px;
+  padding-top: 10px;
+}
+
+/* default styles are for phone-sized screens; layout is responsive: */
+
+@media only screen and (min-width: 600px) /* tablet-sized */
+{
+}
+
+@media only screen and (min-width: 850px) /* full-screen */
+{
+}
+
+/******************************** Navigation Bar ******************************/
+
+div#navBar
+{
+  background-color: rgba(112, 128, 144, 0.5);
+  width: 100%;
+  text-align: center;
+}
+
+div.nav
+{
+  background: slategrey; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(slategrey, white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(slategrey, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(slategrey, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(slategrey, white); /* Standard syntax */
+  color: black;
+  font-family: sans-serif;
+  font-size: 12px;
+  padding: 5px;
+  width: 27%;
+  margin: 5px;
+  display: inline-block;
+}
+
+div.navActive
+{
+  background: yellow; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(yellow, orange); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(yellow, orange); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(yellow, orange); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(yellow, orange, red); /* Standard syntax */
+  color: black;
+  font-family: sans-serif;
+  font-size: 12px;
+  padding: 5px;
+  width: 27%;
+  margin: 5px;
+  display: inline-block;
+}
+
+/****************************** Sarah's Signature *****************************/
+
+div#signature
+{
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+  padding: 0px;
+  background: slategrey; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(slategrey, rgba(0, 0, 0, 0)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(slategrey, rgba(0, 0, 0, 0)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(slategrey, rgba(0, 0, 0, 0)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(slategrey, rgba(0, 0, 0, 0)); /* Standard syntax */
+
+}
+
+hr.signature
+{
+  height: 3px;
+  margin-top: 3px;
+  margin-bottom: 0px;
+  background-color: black;
+  border: 0 none;
+}
+
+p.signature
+{
+  color: black;
+  text-align: center;
+  font-family: monospace;
+  font-size: 13px;
+  posiition: absolute;
+  padding: 0px;
+}
+
+a.signature:link
+{
+  color: black;
+  text-align: center;
+  font-family: monospace;
+  font-size: 13px;
+  posiition: absolute;
+  text-decoration: none;
+}
+
+a.signature:visited
+{
+  color: black;
+  text-align: center;
+  font-family: monospace;
+  font-size: 13px;
+  posiition: absolute;
+  text-decoration: none;
+}
+
+svg#flower
+{
+  width: 103px; /* 103px */
+  height: auto; /* 69px */
+  position: absolute;
+  padding: 3px;
+}
+
+g#orange
+{
+  visibility: hidden;
+}
+
+g#purple
+{
+  visibility: hidden;
+}
+
+g#green
+{
+  visibility: hidden;
+}
