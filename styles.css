@@ -108,7 +108,7 @@ div.navActive
 
 /********************************** Content ***********************************/
 
-div#content
+div.content
 {
   background: rgba(112, 128, 144, 0.5); /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(rgba(112, 128, 144, 0.5), black); /* For Safari 5.1 to 6.0 */
@@ -190,7 +190,18 @@ li
   }
 }
 
-/****************************** Sarah's Signature *****************************/
+/******************************* Bird Feeder **********************************/
+
+div#hopperControls
+{
+  background: rgba(112, 128, 144, 0.5);
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: white;
+}
+
+/******************************** Signature ***********************************/
 
 div#signature
 {

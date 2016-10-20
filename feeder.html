@@ -4,23 +4,30 @@
   <title> Tech Horizons </title>
   <meta charset='UTF-8'> <!-- 16-bit Unicode -->
   <meta name='author' content='Sarah Rosanna Busch'>
-  <meta name='description' content="IoT seed dispenser for small caged birds.">
+  <meta name='description' content="IoT seed dispenser for budgies.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- for responsive design -->
   <link rel='stylesheet' href='styles.css'>
   <!--link rel='icon shortcut' href='icon.png'-->
 </head>
-<body>
+<body onload='onLoad()'>
   <div id='header' onclick='goHome()'></div>
   <div id='navBar'></div>
-  <br><br><br><br>
-  <br><br><br><br>
-  The controls and instructions for the seed dispenser will go here.
-  <br><br><br><br>
-  Technical specs can go here too (possibly to be moved to a separate page later.)
-  <br><br><br><br>
-  <br><br><br><br>
+
+  <div class='content'>
+    <h1>
+      IoT Budgie Feeder
+    </h1>
+    <div id='hopperControls'>
+      <span id='seedLevel'></span><br><br>
+      <button onclick='dispense()'> Dispense Seeds </button><br><br>
+      <span id='dispensing'></span><br><br>
+    </div>
   </div>
+
   <div id='signature'></div>
 </body>
+<!-- to be able to get JSON value from Particle cloud: -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script src='scripts.js'> </script>
+<script src='feeder.js'> </script>
 </html>
