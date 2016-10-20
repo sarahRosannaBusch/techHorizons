@@ -47,13 +47,20 @@ img#logo
 }
 
 /* default styles are for phone-sized screens; layout is responsive: */
-
-@media only screen and (min-width: 600px) /* tablet-sized */
+@media only screen and (min-width: 600px) /* bigger than a phone */
 {
-}
-
-@media only screen and (min-width: 850px) /* full-screen */
-{
+  h1.title
+  {
+    font-size: 50px;
+  }
+  p.subtitle
+  {
+    font-size: 20px;
+  }
+  img#logo
+  {
+    width: 110px;
+  }
 }
 
 /******************************** Navigation Bar ******************************/
@@ -65,7 +72,7 @@ div#navBar
   text-align: center;
 }
 
-div.nav
+div.nav /*button*/
 {
   background: slategrey; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(slategrey, white); /* For Safari 5.1 to 6.0 */
@@ -77,6 +84,7 @@ div.nav
   font-size: 12px;
   padding: 5px;
   width: 27%;
+  max-width: 150px;
   margin: 5px;
   display: inline-block;
 }
@@ -93,8 +101,92 @@ div.navActive
   font-size: 12px;
   padding: 5px;
   width: 27%;
+  max-width: 150px;
   margin: 5px;
   display: inline-block;
+}
+
+/********************************** Content ***********************************/
+
+div#content
+{
+  background: rgba(112, 128, 144, 0.5); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(rgba(112, 128, 144, 0.5), black); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(rgba(112, 128, 144, 0.5), black); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(rgba(112, 128, 144, 0.5), black); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(rgba(112, 128, 144, 0.5), black); /* Standard syntax */
+  padding: 20px;
+  padding-top: 5px;
+  margin-top: 10px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: lightsteelblue;
+}
+
+div.text
+{
+  display: inline-block;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+div.column
+{
+  width: 100%;
+}
+
+div.frame
+{
+  background: rgba(112, 128, 144, 0.5);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h2
+{
+  margin: 0px;
+  padding-bottom: 10px;
+  font-family: sans-serif;
+  font-style: oblique;
+  font-size: 25px;
+}
+
+img.profilePic
+{
+  width: 100%;
+}
+
+ul
+{
+  padding-left: 20px;
+}
+
+li
+{
+  padding-bottom: 5px;
+}
+
+@media only screen and (min-width: 600px) /* tablet-sized */
+{
+  div.column
+  {
+    width: 49%;
+    float: left;
+  }
+  div.frame
+  {
+    margin-left: 5px;
+  }
+}
+
+@media only screen and (min-width: 850px) /* full-screen */
+{
+  div#content
+  {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 }
 
 /****************************** Sarah's Signature *****************************/

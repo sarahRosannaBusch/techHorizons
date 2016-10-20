@@ -12,14 +12,79 @@
 <body>
   <div id='header' onclick='goHome()'></div>
   <div id='navBar'></div>
-  <br><br><br><br>
-  <br><br><br><br>
-  We'll introduce our project and ourselves on this page.
-  <br><br><br><br>
-  And we'll provide instructions on how to use the rest of the site.
-  <br><br><br><br>
-  <br><br><br><br>
-  </div>
+  <div id='content'>
+    <div class='text'>
+      <h1>
+        Welcome to the Tech Horizons demo site!
+      </h1>
+      <p>
+        For our Computer and Electronics Engineering Technology capstone project at
+        Camosun College, we are creating three IoT devices that will improve your life.
+      </p>
+      <p>
+        The first is a pet tracking device that attaches to the collar of your cat or
+        dog. It uses the 3G network to connect to the Internet, storing the GPS location
+        of your pet periodically to the cloud, where you can access it if he gets lost.
+      </p>
+      <p>
+        The second device is a food dispenser for small animals in cages that have
+        half inch bar spacing. We are designing it specifically with budgies in mind,
+        so it will hold approximately 16tsp of seed that can be dispensed on an automated
+        schedule, or manually from your smart phone or laptop, for those days when
+        you can't make it home in time for your pet's dinner.
+      </p>
+      <p>
+        The third device is a lamp that is aimed at improving our circadian rhythms,
+        and therefore our quality of sleep. It will accomplish this by turning from
+        the bright light that we need during the day, to a warm redder light in the
+        evening allowing our bodies to produce melatonin, triggering proper sleep.
+      </p>
+    </div>
+    <h1> Meet our Team: </h1>
+    <div class='column'>
+      <div class='frame'>
+        <h2>
+          Sarah Busch
+        </h2>
+        <img class='profilePic' src='sarah.png' />
+        <h3>
+          Lead Programmer
+        </h3>
+        <ul>
+          <li> Coding firmware in C++ using the Particle Build IDE </li>
+          <li> Coding the user interface using javascript, html5, css3, and svg </li>
+          <li> Mechanical designs of seed dispenser and lamp </li>
+          <li> Electronics design of the seed dispenser </li>
+        </ul>
+      </div>
+    </div>
+    <div class='column'>
+      <div class='frame'>
+        <h2>
+          Emily Wolfe
+        </h2>
+        <img class='profilePic' src='emily.png' />
+        <h3>
+          Lead Hardware Engineer
+        </h3>
+        <ul>
+          <li> Circuit design for the lamp and pet tracker </li>
+          <li> PCB design for the lamp and pet tracker </li>
+          <li> Research on how to acheive the quality of light we need </li>
+          <li> Integration of Particle Electron with the nana GPS click board </li>
+        </ul>
+      </div>
+    </div>
+    <div class='text'>
+      <h1>
+        Thank you for your interest in our project.
+      </h1>
+      <p>
+        For more information about each of
+        our products please visit the links near the top of the page.
+      </p>
+    </div>
+  </div> <!-- end of content div -->
   <div id='signature'></div>
 </body>
 <script src='scripts.js'> </script>
