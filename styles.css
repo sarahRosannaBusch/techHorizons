@@ -201,6 +201,62 @@ div#hopperControls
   color: white;
 }
 
+/************************************ Lamp ************************************/
+
+div#lightSwitches
+{
+  width: 33%;
+  float: left;
+}
+
+div#lightPanel
+{
+  width: 63%;
+  background: rgba(112, 128, 144, 0.5);
+  float: left;
+  height: 350px;
+  margin-left: 3%;
+}
+
+button.lightSwitch
+{
+  background: slategrey; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(slategrey, blue, green); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(slategrey, blue, green); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(slategrey, blue, green); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* Standard syntax */
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 12px;
+  padding: 5px 15px;
+  font-size: 14px;
+  color: lightsteelblue;
+  font-family: monospace;
+  box-shadow: 2px 2px black;
+  outline: none;
+}
+
+button.activeSwitch
+{
+  background: orange; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(blue, green); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(slategrey, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(slategrey, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(red, orange, red); /* Standard syntax */
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 12px;
+  padding: 5px 15px;
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+  font-family: monospace;
+  box-shadow: 2px 2px black;
+  outline: none; /* so no outline shows up */
+}
+
 /******************************** Signature ***********************************/
 
 div#signature
