@@ -219,9 +219,9 @@ div#lightSwitches
 button.lightSwitch
 {
   background: slategrey; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(slategrey, blue, green); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(slategrey, blue, green); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(slategrey, blue, green); /* For Firefox 3.6 to 15 */
+  background: -webkit-linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* For Firefox 3.6 to 15 */
   background: linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* Standard syntax */
   width: 100%;
   height: 45px;
@@ -238,9 +238,9 @@ button.lightSwitch
 button.activeSwitch
 {
   background: orange; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(blue, green); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(slategrey, white); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(slategrey, white); /* For Firefox 3.6 to 15 */
+  background: -webkit-linear-gradient(red, orange, red); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(red, orange, red); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(red, orange, red); /* For Firefox 3.6 to 15 */
   background: linear-gradient(red, orange, red); /* Standard syntax */
   width: 100%;
   height: 45px;
@@ -265,80 +265,62 @@ div#lightPanel
   padding: 15px;
 }
 
-/******************************** Signature ***********************************/
+/********************************* Footer *************************************/
 
-div#signature
+div#footer
 {
-  float: left;
+  display: inline-block;
   width: 100%;
-  margin-top: 10px;
+  font-family: monospace;
+  color: black;
+  background: orange; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(blue, green); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(slategrey, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(slategrey, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(red, orange, orange, red); /* Standard syntax */
   padding: 0px;
-  background: slategrey; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(slategrey, rgba(0, 0, 0, 0)); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(slategrey, rgba(0, 0, 0, 0)); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(slategrey, rgba(0, 0, 0, 0)); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(slategrey, rgba(0, 0, 0, 0)); /* Standard syntax */
-
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-hr.signature
+hr.footer
 {
   height: 3px;
   margin-top: 3px;
-  margin-bottom: 0px;
+  margin-bottom: 3px;
   background-color: black;
   border: 0 none;
 }
 
-p.signature
+div.footerColumn
 {
-  color: black;
-  text-align: center;
-  font-family: monospace;
-  font-size: 13px;
-  posiition: absolute;
-  padding: 0px;
+  width: 50%;
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-a.signature:link
+h3.footer
 {
-  color: black;
-  text-align: center;
-  font-family: monospace;
-  font-size: 13px;
-  posiition: absolute;
-  text-decoration: none;
+  margin-bottom: 0px;
 }
 
-a.signature:visited
+p.footer
 {
-  color: black;
-  text-align: center;
-  font-family: monospace;
-  font-size: 13px;
-  posiition: absolute;
-  text-decoration: none;
+  margin-top: 0px;
 }
 
-svg#flower
+img#camosunLogo
 {
-  width: 103px; /* 103px */
-  height: auto; /* 69px */
-  position: absolute;
-  padding: 3px;
+  width: 100%;
 }
 
-g#orange
+@media only screen and (min-width: 600px) /* tablet-sized */
 {
-  visibility: hidden;
+
 }
 
-g#purple
+@media only screen and (min-width: 850px) /* full-screen */
 {
-  visibility: hidden;
-}
 
-g#green
-{
-  visibility: hidden;
 }

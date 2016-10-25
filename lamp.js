@@ -1,5 +1,5 @@
-var deviceID = ""; //change these to your device's
-var accessToken = ""; //eventually these values will be obtained from a user form
+var deviceID = "400029000a51353335323536"; //change these to your device's
+var accessToken = "4ed978c8d44ee74e0da0a2e08db5dcd401ce9958"; //eventually these values will be obtained from a user form
 
 function loadLamp()
 {
