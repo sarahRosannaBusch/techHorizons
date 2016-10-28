@@ -85,6 +85,7 @@ div.nav /*button*/
   padding: 5px;
   width: 27%;
   max-width: 150px;
+  min-width: 80px;
   margin: 5px;
   display: inline-block;
 }
@@ -102,6 +103,7 @@ div.navActive
   padding: 5px;
   width: 27%;
   max-width: 150px;
+  min-width: 80px;
   margin: 5px;
   display: inline-block;
 }
@@ -128,6 +130,28 @@ h1
   color: orange;
 }
 
+h2
+{
+  margin: 0px;
+  padding-bottom: 10px;
+  font-family: sans-serif;
+  font-style: oblique;
+  font-size: 25px;
+  color: darkcyan;
+  text-shadow: 1px 1px black;
+}
+
+@media only screen and (min-width: 850px) /* full-screen */
+{
+  div#content
+  {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+/******************************** Team Bios ***********************************/
+
 div.text
 {
   display: inline-block;
@@ -146,17 +170,6 @@ div.frame
   background: rgba(112, 128, 144, 0.5);
   padding: 20px;
   margin-bottom: 20px;
-}
-
-h2
-{
-  margin: 0px;
-  padding-bottom: 10px;
-  font-family: sans-serif;
-  font-style: oblique;
-  font-size: 25px;
-  color: darkcyan;
-  text-shadow: 1px 1px black;
 }
 
 img.profilePic
@@ -179,21 +192,12 @@ li
 {
   div.column
   {
-    width: 49%;
+    width: 50%;
     float: left;
   }
   div.frame
   {
-    margin-left: 5px;
-  }
-}
-
-@media only screen and (min-width: 850px) /* full-screen */
-{
-  div#content
-  {
-    padding-left: 50px;
-    padding-right: 50px;
+    width: 95%;
   }
 }
 
@@ -212,7 +216,7 @@ div#hopperControls
 
 div#lightSwitches
 {
-  width: 33%;
+  width: 100%;
   float: left;
 }
 
@@ -224,6 +228,7 @@ button.lightSwitch
   background: -moz-linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* For Firefox 3.6 to 15 */
   background: linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* Standard syntax */
   width: 100%;
+  float: left;
   height: 45px;
   border: none;
   border-radius: 12px;
@@ -233,6 +238,7 @@ button.lightSwitch
   font-family: monospace;
   box-shadow: 2px 2px black;
   outline: none;
+  margin-bottom: 10px;
 }
 
 button.activeSwitch
@@ -243,6 +249,7 @@ button.activeSwitch
   background: -moz-linear-gradient(red, orange, red); /* For Firefox 3.6 to 15 */
   background: linear-gradient(red, orange, red); /* Standard syntax */
   width: 100%;
+  float: left;
   height: 45px;
   border: none;
   border-radius: 12px;
@@ -253,16 +260,34 @@ button.activeSwitch
   font-family: monospace;
   box-shadow: 2px 2px black;
   outline: none; /* so no outline shows up */
+  margin-bottom: 10px;
 }
 
 div#lightPanel
 {
-  width: 63%;
+  width: 100%;
   background: rgba(112, 128, 144, 0.5);
   float: left;
-  height: 350px;
-  margin-left: 3%;
   padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+/* default is one column for small screens */
+
+@media only screen and (min-width: 500px)
+{
+  div#lightSwitches
+  {
+    width: 33%;
+  }
+  div#lightPanel
+  {
+    width: 60%;
+    margin-top: 0px;
+    height: 320px;
+    margin-left: 20px;
+  }
 }
 
 /********************************* Footer *************************************/
@@ -281,6 +306,7 @@ div#footer
   padding: 0px;
   margin-top: 20px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 hr.footer
@@ -292,16 +318,34 @@ hr.footer
   border: 0 none;
 }
 
+div#bottomLine
+{
+  width: 100%;
+  float: left;
+}
+
 div.footerColumn
 {
-  width: 50%;
+  width: 100%;
   float: left;
   padding-left: 20px;
   padding-right: 20px;
 }
 
+div.logoColumn
+{
+  width: 100%;
+  float: right;
+}
+
+img#camosunLogo
+{
+  width: 150px;
+}
+
 h3.footer
 {
+  margin-top: 20px;
   margin-bottom: 0px;
 }
 
@@ -310,17 +354,24 @@ p.footer
   margin-top: 0px;
 }
 
-img#camosunLogo
+/* default is one column for small screens */
+
+@media only screen and (min-width: 500px) /* two columns */
 {
-  width: 100%;
+  div.footerColumn
+  {
+    width: 50%;
+  }
 }
 
-@media only screen and (min-width: 600px) /* tablet-sized */
+@media only screen and (min-width: 700px) /* three columns */
 {
-
-}
-
-@media only screen and (min-width: 850px) /* full-screen */
-{
-
+  div.logoColumn
+  {
+    width: 33%;
+  }
+  div.footerColumn
+  {
+    width: 33%;
+  }
 }

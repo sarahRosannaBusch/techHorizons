@@ -36,14 +36,15 @@ else
 document.getElementById("footer").innerHTML =
   "<hr class='footer'>" +
   "<div class='footerColumn'>" +
-    "<h3 class='footer'> Capstone Project By: </h3>" +
-    "<p class='footer'> Sarah Rosanna Busch <br>" +
-    "Emily Claire Wolfe </p>" +
+    "<h3 class='footer'> ELEX 290 & ENGL 273 <br> Capstone Project By: </h3><br>" +
+    "<p class='footer'> Sarah Rosanna Busch <br> and <br> Emily Claire Wolfe </p>" +
+  "</div>" +
+  "<div class='footerColumn'>" +
     "<h3 class='footer'> Documentation: </h3>" +
     "<a class='footer' href='https://docs.google.com/document/d/1NRvmEhG1d8bm2GLgIiouHB_C74hp-B3c0jHjvXk4gyE/edit?usp=sharing' target=_blank> Project Proposal</a><br><br>" +
   "</div>" +
-  "<div class='footerColumn'>" +
+  "<div class='logoColumn'>" +
     "<img id='camosunLogo' src='images/camosunLogo.svg' />" +
-    "<h3 class='footer'> ELEX 290 & ENGL 273 </h3>" +
-  "</div>"
+  "</div>" +
+  "<div id='bottomLine'><hr class='footer'></div>"
   ;
