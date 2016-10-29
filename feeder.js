@@ -1,5 +1,5 @@
-var deviceID = ""; //change these to your device's
-var accessToken = ""; //eventually these values will be obtained from a user form
+var deviceID = "xxx"; //change these to your device's
+var accessToken = "xxx"; //eventually these values will be obtained from a user form
 
 function onLoad()
 {
