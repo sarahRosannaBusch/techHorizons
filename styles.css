@@ -34,7 +34,7 @@ h1.title
 p.subtitle
 {
   font-size: 15px;
-  color: silver;
+  color: slategrey;
   font-family: cursive;
   padding: 0px;
   margin: 0px;
@@ -85,6 +85,7 @@ div.nav /*button*/
   padding: 5px;
   width: 27%;
   max-width: 150px;
+  min-width: 80px;
   margin: 5px;
   display: inline-block;
 }
@@ -102,6 +103,7 @@ div.navActive
   padding: 5px;
   width: 27%;
   max-width: 150px;
+  min-width: 80px;
   margin: 5px;
   display: inline-block;
 }
@@ -123,6 +125,33 @@ div.content
   color: lightsteelblue;
 }
 
+h1
+{
+  color: orange;
+}
+
+h2
+{
+  margin: 0px;
+  padding-bottom: 10px;
+  font-family: sans-serif;
+  font-style: oblique;
+  font-size: 25px;
+  color: darkcyan;
+  text-shadow: 1px 1px black;
+}
+
+@media only screen and (min-width: 850px) /* full-screen */
+{
+  div#content
+  {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+/******************************** Team Bios ***********************************/
+
 div.text
 {
   display: inline-block;
@@ -141,15 +170,6 @@ div.frame
   background: rgba(112, 128, 144, 0.5);
   padding: 20px;
   margin-bottom: 20px;
-}
-
-h2
-{
-  margin: 0px;
-  padding-bottom: 10px;
-  font-family: sans-serif;
-  font-style: oblique;
-  font-size: 25px;
 }
 
 img.profilePic
@@ -172,22 +192,20 @@ li
 {
   div.column
   {
-    width: 49%;
+    width: 50%;
     float: left;
   }
   div.frame
   {
-    margin-left: 5px;
+    width: 95%;
   }
 }
 
-@media only screen and (min-width: 850px) /* full-screen */
+/******************************* Pet Tracker **********************************/
+
+iframe#map
 {
-  div#content
-  {
-    padding-left: 50px;
-    padding-right: 50px;
-  }
+  max-width: 100%;
 }
 
 /******************************* Bird Feeder **********************************/
@@ -201,31 +219,15 @@ div#hopperControls
   color: white;
 }
 
-/************************************ Lamp ************************************/
-
-div#lightSwitches
-{
-  width: 33%;
-  float: left;
-}
-
-div#lightPanel
-{
-  width: 63%;
-  background: rgba(112, 128, 144, 0.5);
-  float: left;
-  height: 350px;
-  margin-left: 3%;
-}
-
-button.lightSwitch
+button.feedBird
 {
   background: slategrey; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(slategrey, blue, green); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(slategrey, blue, green); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(slategrey, blue, green); /* For Firefox 3.6 to 15 */
+  background: -webkit-linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* For Firefox 3.6 to 15 */
   background: linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* Standard syntax */
-  width: 100%;
+  width: 250px;
+  max-width: 100%;
   height: 45px;
   border: none;
   border-radius: 12px;
@@ -235,16 +237,49 @@ button.lightSwitch
   font-family: monospace;
   box-shadow: 2px 2px black;
   outline: none;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/************************************ Lamp ************************************/
+
+div#lightSwitches
+{
+  width: 100%;
+  float: left;
+}
+
+button.lightSwitch
+{
+  background: slategrey; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* Standard syntax */
+  width: 100%;
+  float: left;
+  height: 45px;
+  border: none;
+  border-radius: 12px;
+  padding: 5px 15px;
+  font-size: 14px;
+  color: lightsteelblue;
+  font-family: monospace;
+  box-shadow: 2px 2px black;
+  outline: none;
+  margin-bottom: 10px;
 }
 
 button.activeSwitch
 {
   background: orange; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(blue, green); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(slategrey, white); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(slategrey, white); /* For Firefox 3.6 to 15 */
+  background: -webkit-linear-gradient(red, orange, red); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(red, orange, red); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(red, orange, red); /* For Firefox 3.6 to 15 */
   background: linear-gradient(red, orange, red); /* Standard syntax */
   width: 100%;
+  float: left;
   height: 45px;
   border: none;
   border-radius: 12px;
@@ -255,82 +290,145 @@ button.activeSwitch
   font-family: monospace;
   box-shadow: 2px 2px black;
   outline: none; /* so no outline shows up */
+  margin-bottom: 10px;
 }
 
-/******************************** Signature ***********************************/
-
-div#signature
+button.deadSwitch
 {
-  float: left;
-  width: 100%;
-  margin-top: 10px;
-  padding: 0px;
   background: slategrey; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(slategrey, rgba(0, 0, 0, 0)); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(slategrey, rgba(0, 0, 0, 0)); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(slategrey, rgba(0, 0, 0, 0)); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(slategrey, rgba(0, 0, 0, 0)); /* Standard syntax */
-
+  background: -webkit-linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(slategrey, rgba(112,128,144,0.5), slategrey); /* Standard syntax */
+  width: 100%;
+  float: left;
+  height: 45px;
+  border: none;
+  border-radius: 12px;
+  padding: 5px 15px;
+  font-size: 14px;
+  color: lightsteelblue;
+  font-family: monospace;
+  box-shadow: 2px 2px black;
+  outline: none;
+  margin-bottom: 10px;
 }
 
-hr.signature
+div#lightPanel
+{
+  width: 100%;
+  background: rgba(112, 128, 144, 0.5);
+  float: left;
+  padding: 25px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+p.error
+{
+  font-size: oblique;
+  color: orange;
+}
+
+/* default is one column for small screens */
+
+@media only screen and (min-width: 500px)
+{
+  div#lightSwitches
+  {
+    width: 33%;
+  }
+  div#lightPanel
+  {
+    width: 60%;
+    margin-top: 0px;
+    min-height: 320px;
+    margin-left: 20px;
+  }
+}
+
+/********************************* Footer *************************************/
+
+div#footer
+{
+  display: inline-block;
+  width: 100%;
+  font-family: monospace;
+  color: black;
+  background: orange; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(blue, green); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(slategrey, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(slategrey, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(red, orange, orange, red); /* Standard syntax */
+  padding: 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+hr.footer
 {
   height: 3px;
   margin-top: 3px;
-  margin-bottom: 0px;
+  margin-bottom: 3px;
   background-color: black;
   border: 0 none;
 }
 
-p.signature
+div#bottomLine
 {
-  color: black;
-  text-align: center;
-  font-family: monospace;
-  font-size: 13px;
-  posiition: absolute;
-  padding: 0px;
+  width: 100%;
+  float: left;
 }
 
-a.signature:link
+div.footerColumn
 {
-  color: black;
-  text-align: center;
-  font-family: monospace;
-  font-size: 13px;
-  posiition: absolute;
-  text-decoration: none;
+  width: 100%;
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-a.signature:visited
+div.logoColumn
 {
-  color: black;
-  text-align: center;
-  font-family: monospace;
-  font-size: 13px;
-  posiition: absolute;
-  text-decoration: none;
+  width: 100%;
+  float: right;
 }
 
-svg#flower
+img#camosunLogo
 {
-  width: 103px; /* 103px */
-  height: auto; /* 69px */
-  position: absolute;
-  padding: 3px;
+  width: 150px;
 }
 
-g#orange
+h3.footer
 {
-  visibility: hidden;
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 
-g#purple
+p.footer
 {
-  visibility: hidden;
+  margin-top: 0px;
 }
 
-g#green
+/* default is one column for small screens */
+
+@media only screen and (min-width: 500px) /* two columns */
 {
-  visibility: hidden;
+  div.footerColumn
+  {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 700px) /* three columns */
+{
+  div.logoColumn
+  {
+    width: 33%;
+  }
+  div.footerColumn
+  {
+    width: 33%;
+  }
 }
