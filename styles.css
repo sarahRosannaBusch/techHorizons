@@ -342,7 +342,7 @@ p.error
   {
     width: 60%;
     margin-top: 0px;
-    height: 320px;
+    min-height: 320px;
     margin-left: 20px;
   }
 }

@@ -3,6 +3,8 @@ var accessToken = "4ed978c8d44ee74e0da0a2e08db5dcd401ce9958"; //eventually these
 
 function loadLamp() //when the page is loaded it determines the current status of the lamp
 {
+  disableButtons(); //light switches can't be clicked until page is ready
+
   //reference: http://stackoverflow.com/questions/17156332/jquery-ajax-how-to-handle-timeouts-best
   $.ajax({
     type: "GET",
@@ -11,12 +13,14 @@ function loadLamp() //when the page is loaded it determines the current status o
     dataType: "json",
     success: function(json)
     {
+      enableButtons(); //now settings can be changed
       var setting = json.result;
       document.getElementById(setting).className = 'activeSwitch';
       settingDisplay(setting);
     },
     error: function(request, status, err)
     {
+      enableButtons(); //now settings can be changed
       if(status == "timeout")
       {
         document.getElementById('lightPanel').innerHTML =
@@ -35,13 +39,7 @@ function loadLamp() //when the page is loaded it determines the current status o
 
 function lamp(setting) //lamp controls
 {
-  //reset all buttons to 'off'
-  document.getElementById('day').className = 'lightSwitch';
-  document.getElementById('warm').className = 'lightSwitch';
-  document.getElementById('evening').className = 'lightSwitch';
-  document.getElementById('night').className = 'lightSwitch';
-  document.getElementById('off').className = 'lightSwitch';
-  document.getElementById('auto').className = 'lightSwitch';
+  disableButtons(); //so multiple buttons can't be clicked
 
   $.ajax({
     type: "POST",
@@ -50,11 +48,13 @@ function lamp(setting) //lamp controls
     dataType: "json",
     success: function(json)
     {
+      enableButtons();
       document.getElementById(setting).className = 'activeSwitch';
       settingDisplay(setting);
     },
     error: function(request, status, err)
     {
+      enableButtons();
       if(status == "timeout")
       {
         document.getElementById(setting).className = 'deadSwitch';
@@ -67,24 +67,6 @@ function lamp(setting) //lamp controls
       }
     }
   });
-
-  //Using the following creates a 400 error when the device is not connected...is there a better way to handle this?
-  /*Create an XMLHttpRequest Object for POSTs
-  var xhr;
-    try { xhr = new XMLHttpRequest(); }
-    catch(e) { xhr = new ActiveXObject('Microsoft.XMLHTTP'); } //for old versions of IE
-  xhr.onreadystatechange = function()
-  {
-    if (this.readyState == 4 && this.status == 200) //ok
-    {
-      //document.getElementById("lampStatus").innerHTML = this.responseText;
-      document.getElementById(setting).className = 'activeSwitch';
-    }
-  };
-  xhr.open("POST", "https://api.particle.io/v1/devices/" + deviceID + "/" + setting + "?access_token=" + accessToken, true);
-  xhr.send();
-  settingDisplay(setting);
-  */
 }
 
 function settingDisplay(setting)
@@ -145,4 +127,39 @@ function settingDisplay(setting)
   }
 
   document.getElementById('lightPanel').innerHTML = description;
+}
+
+function disableButtons()
+{
+  $('.lightSwitch').css('cursor', 'wait'); //cursor indicates program is running
+  //$('.lightSwitch').css('disabled', true); //why doesn't this work?
+
+  //so multiple button presses don't mess things up
+  document.getElementById('day').disabled = true;
+  document.getElementById('warm').disabled = true;
+  document.getElementById('evening').disabled = true;
+  document.getElementById('night').disabled = true;
+  document.getElementById('off').disabled = true;
+  document.getElementById('auto').disabled = true;
+
+  //reset all buttons to 'off'
+  document.getElementById('day').className = 'lightSwitch';
+  document.getElementById('warm').className = 'lightSwitch';
+  document.getElementById('evening').className = 'lightSwitch';
+  document.getElementById('night').className = 'lightSwitch';
+  document.getElementById('off').className = 'lightSwitch';
+  document.getElementById('auto').className = 'lightSwitch';
+}
+
+function enableButtons()
+{
+  $('.lightSwitch').css('cursor', 'pointer');
+  //$('.lightSwitch').css('disabled', false);
+
+  document.getElementById('day').disabled = false;
+  document.getElementById('warm').disabled = false;
+  document.getElementById('evening').disabled = false;
+  document.getElementById('night').disabled = false;
+  document.getElementById('off').disabled = false;
+  document.getElementById('auto').disabled = false;
 }
