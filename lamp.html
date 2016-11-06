@@ -7,12 +7,11 @@
   <meta name='description' content="Smart lamp for better sleep.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- for responsive design -->
   <link rel='stylesheet' href='styles.css'>
-  <!--link rel='icon shortcut' href='icon.png'-->
+  <link rel='icon shortcut' href='images/icon.png'>
 </head>
 <body onload='loadLamp()'>
   <div id='header' onclick='goHome()'></div>
   <div id='navBar'></div>
-
   <div class='content'>
     <h1>
       Smart Lamp Control Center
@@ -30,12 +29,8 @@
       <button id='auto' class='lightSwitch' onclick='lamp("auto")'> Auto </button><br><br>
     </div>
     <div id='lightPanel'>
-      <h2>
-        Please wait...
-      </h2>
-      <p>
-        Connecting to device.
-      </p>
+      <h2> Please wait...</h2>
+      <p> Connecting to device.</p>
     </div>
   </div> <!-- end of content div -->
   <div id='footer'></div>

@@ -3,7 +3,7 @@ var accessToken = "4ed978c8d44ee74e0da0a2e08db5dcd401ce9958"; //eventually these
 
 function loadLamp() //when the page is loaded it determines the current status of the lamp
 {
-  disableButtons(); //light switches can't be clicked until page is ready
+  disableButtons(); //so light switches can't be clicked until page is ready
 
   //reference: http://stackoverflow.com/questions/17156332/jquery-ajax-how-to-handle-timeouts-best
   $.ajax({
@@ -142,7 +142,7 @@ function disableButtons()
   document.getElementById('off').disabled = true;
   document.getElementById('auto').disabled = true;
 
-  //reset all buttons to 'off'
+  //reset all buttons to look 'off'
   document.getElementById('day').className = 'lightSwitch';
   document.getElementById('warm').className = 'lightSwitch';
   document.getElementById('evening').className = 'lightSwitch';

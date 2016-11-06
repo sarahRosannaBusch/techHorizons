@@ -74,7 +74,7 @@ function dispense()
     },
     error: function(request, status, err)
     {
-      document.getElementById('dispensing').innerHTML = "Dispense failed, check your device.";
+      document.getElementById('dispensing').innerHTML = "Dispense failed, please check your device.";
     }
   });
 }
