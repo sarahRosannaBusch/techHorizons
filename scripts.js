@@ -41,7 +41,11 @@ document.getElementById("footer").innerHTML =
   "</div>" +
   "<div class='footerColumn'>" +
     "<h3 class='footer'> Documentation: </h3>" +
-    "<a class='footer' href='https://docs.google.com/document/d/1NRvmEhG1d8bm2GLgIiouHB_C74hp-B3c0jHjvXk4gyE/edit?usp=sharing' target=_blank> Project Proposal</a><br><br>" +
+    "<a class='footer' href='https://docs.google.com/document/d/1NRvmEhG1d8bm2GLgIiouHB_C74hp-B3c0jHjvXk4gyE/edit?usp=sharing' target='_blank'> Project Proposal</a><br>" +
+    "<a class='footer' href='https://docs.google.com/presentation/d/15NisVMKIx2EaC61caH7quVC5pXi4chDEDkeWaVqRR00/edit?usp=sharing' target='_blank'> Elevator Pitch</a><br>" +
+    "<a class='footer' href='https://docs.google.com/document/d/18PmsGwTxuioCkMh4xr2sk-mvoCNLXaenLL__o2moO4Y/edit?usp=sharing' target='_blank'> Team Bios</a><br>" +
+    "<a class='footer' href='https://docs.google.com/presentation/d/1T_Pc-pBYF3uRTH0H3CspDlyI5SlaI0LQnETyy1axIBg/edit?usp=sharing' target='_blank'> Progress Presentation</a><br>" +
+    "<a class='footer' href='https://docs.google.com/document/d/1VvYC1uVVuz1JXp5qReavqVJov-z56YZfo4vD6SrP93w/edit?usp=sharing' target='_blank'> Midterm Report</a><br>" +
   "</div>" +
   "<div class='logoColumn'>" +
     "<img id='camosunLogo' src='images/camosunLogo.svg' />" +
