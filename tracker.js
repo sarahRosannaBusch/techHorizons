@@ -1,5 +1,5 @@
-var deviceID = "340036001951353338363036"; //change these to your device's
-var accessToken = "7aae8e0b7bd849a669f4efc2907b31b0442cf7c3";
+var deviceID = ""; //change these to your device's
+var accessToken = "";
 
 function onload()
 {
