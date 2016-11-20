@@ -32,7 +32,7 @@ h1.title
   padding: 0px;
 }
 
-p.subtitle
+h2.subtitle
 {
   font-size: 15px;
   color: slategrey;
@@ -250,9 +250,53 @@ div#hopperControls
   margin-bottom: 20px;
   text-align: center;
   color: white;
+  width: 100%;
 }
 
-button.feedBird
+div#feederBox
+{
+  text-align: center;
+  width: 100%;
+}
+
+svg#feederPic
+{
+  margin-bottom: 20px;
+  margin-top: 20px;
+  max-width: 100%;
+}
+
+g#seedsFull
+{
+  visibility: hidden;
+}
+
+g#seeds1Q
+{
+  visibility: hidden;
+}
+
+g#seeds2Q
+{
+  visibility: hidden;
+}
+
+g#seeds3Q
+{
+  visibility: hidden;
+}
+
+g#fall1
+{
+  visibility: hidden;
+}
+
+g#fall2
+{
+  visibility: hidden;
+}
+
+button#feedBird
 {
   background: slategrey; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* For Safari 5.1 to 6.0 */
@@ -274,6 +318,21 @@ button.feedBird
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 500px) /* wider screen layout */
+{
+  div#hopperControls
+  {
+    width: 45%;
+    float: left;
+    margin-top: 20px;
+  }
+  div#feederBox
+  {
+    width: 50%;
+    float: left;
+  }
 }
 
 /************************************ Lamp ************************************/

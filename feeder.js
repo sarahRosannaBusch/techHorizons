@@ -1,5 +1,6 @@
-var deviceID = ""; //change these to your device's
-var accessToken = ""; //eventually these values will be obtained from a user form
+var deviceID = "420018000a51353335323536"; //change these to your device's
+var accessToken = "4ed978c8d44ee74e0da0a2e08db5dcd401ce9958"; //eventually these values will be obtained from a user form
+var timer; //for dispensing animation
 
 function onLoad()
 {
@@ -28,20 +29,29 @@ function measureSeeds() //runs the 'readSeeds' function in the device's firmware
           switch(lvl)
           {
             case 0:
+            {
               msg = "Full";
-              break;
+              document.getElementById('seedsFull').style.visibility = 'visible';
+            }break;
             case 1:
-              msg = "Two-Thirds Full";
-              break;
+            {
+              msg = "Three Quarters Full";
+              document.getElementById('seeds3Q').style.visibility = 'visible';
+            }break;
             case 2:
-              msg = "One-Third Full";
-              break;
+            {
+              msg = "Two Quarters Full";
+              document.getElementById('seeds2Q').style.visibility = 'visible';
+            }break;
             case 3:
-              msg = "Seeds Low";
-              break;
+            {
+              msg = "One Quarter Left";
+              document.getElementById('seeds1Q').style.visibility = 'visible';
+            }break;
             case 4:
+            {
               msg = "Empty";
-              break;
+            }break;
             default:
               msg = "Unknown Seed Level";
           }
@@ -61,7 +71,10 @@ function measureSeeds() //runs the 'readSeeds' function in the device's firmware
 
 function dispense()
 {
+  document.getElementById('feedBird').disabled = true; //disable button
+
   document.getElementById('dispensing').innerHTML = "Dispensing seeds...";
+  timer = setInterval(svgDispense, 250); //runs animation
 
   $.ajax({
     type: "POST",
@@ -71,10 +84,50 @@ function dispense()
     success: function(json)
     {
       document.getElementById('dispensing').innerHTML = "Success!";
+      measureSeeds();
+      killAnimation();
+      document.getElementById('feedBird').disabled = false; //enable button
     },
     error: function(request, status, err)
     {
       document.getElementById('dispensing').innerHTML = "Dispense failed, please check your device.";
+      killAnimation();
+      document.getElementById('feedBird').disabled = false; //enable button
     }
   });
+}
+
+var toggle = 0;
+function svgDispense()
+{
+  document.getElementById('gateUp').style.visibility = 'hidden';
+  if(toggle == 0)
+  {
+    document.getElementById('fall1').style.visibility = 'visible';
+    document.getElementById('fall2').style.visibility = 'hidden';
+    toggle = 1;
+  }
+  else if(toggle == 1)
+  {
+    document.getElementById('fall2').style.visibility = 'visible';
+    document.getElementById('fall1').style.visibility = 'hidden';
+    toggle = 2;
+  }
+  else if(toggle == 2)
+  {
+    document.getElementById('fall2').style.visibility = 'hidden';
+    document.getElementById('fall1').style.visibility = 'hidden';
+    toggle = 0;
+  }
+  else {
+    killAnimation();
+  }
+}
+
+function killAnimation()
+{
+  clearInterval(timer);
+  document.getElementById('fall1').style.visibility = 'hidden';
+  document.getElementById('fall2').style.visibility = 'hidden';
+  document.getElementById('gateUp').style.visibility = 'visible';
 }
