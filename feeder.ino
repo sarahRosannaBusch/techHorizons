@@ -32,7 +32,7 @@ void setup()
     //initialize Servo
     myServo.attach(servoPin); //attach the PWM pin to the data line on the servo
     Particle.function("servo", servoControl); //when 'servo' is called from the cloud servoControl() runs
-    Particle.variable("servoPos", &servoPos , INT);//Make the variable 'servoPos' available through the cloud
+    Particle.variable("servoPos", &servoPos , INT); //Make the variable 'servoPos' available through the cloud
 
     //initialize optoelectronics
     pinMode(led, OUTPUT); //all digi pins being used are outputs
@@ -52,7 +52,6 @@ void setup()
     digitalWrite(onePower, LOW);
     digitalWrite(emptyPower, LOW);
 
-    //Particle.variable("seedLevel", &seedLevel, INT); //variable 'seedLevel' is available to the cloud
     Particle.variable("A0", &analogFull, INT); //these are just for testing to see what level is on each resistor
     Particle.variable("A1", &analogTwo, INT);
     Particle.variable("A2", &analogOne, INT);
@@ -69,7 +68,7 @@ void loop()
 
 int readSeeds(String command) //detects seed level
 {
-    //test one photoresistor at a time (because when I did them all at one my Photon died)
+    //test one photoresistor at a time (because when I did them all at once my Photon died)
     digitalWrite(led, HIGH); //turn on LED
 
     digitalWrite(fullPower, HIGH); //power top photoresistor

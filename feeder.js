@@ -18,7 +18,7 @@ function measureSeeds() //runs the 'readSeeds' function in the device's firmware
       $.ajax({
         type: "GET",
         url: "https://api.particle.io/v1/devices/" + deviceID + "/seedLvl?access_token=" + accessToken,
-        timeout: 5000,
+        //timeout: 5000,
         dataType: "json",
         success: function(json)
         {

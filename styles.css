@@ -203,10 +203,42 @@ li
 }
 
 /******************************* Pet Tracker **********************************/
+div#map
+{
+  width: 100%;
+  text-align: center;
+}
 
 iframe#map
 {
   max-width: 100%;
+}
+
+div#trackerData
+{
+  width: 100%;
+  background: rgba(112, 128, 144, 0.5);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 700px) /* wider screen layout */
+{
+  div#map
+  {
+    width: 40%;
+    float: left;
+    text-align: left;
+  }
+
+  div#trackerData
+  {
+    width: 55%;
+    float: left;
+    margin-top: 0px;
+    margin-left: 20px;
+    min-height: 300px;
+  }
 }
 
 /******************************* Bird Feeder **********************************/
@@ -395,6 +427,7 @@ div.logoColumn
 {
   width: 100%;
   float: right;
+  padding-top: 20px;
 }
 
 img#camosunLogo

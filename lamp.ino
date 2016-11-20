@@ -1,5 +1,5 @@
 //Firmware for Sarah Busch and Emily Wolfe's IoT Smart Lamp
-//using a Particle Photon dev board
+//using a Particle Photon dev board and LED breakout board designed by Emily Wolfe
 //Written by Sarah Rosanna Busch in October 2016
 
 const int red1 = D0; //five pins control the red leds
@@ -72,7 +72,7 @@ void setup()
 
     readLight(); //to get an initial light level value
 
-    Time.zone(-7); //Pacific time is UTC-8, but daylight savings
+    Time.zone(-7); //Pacific time is UTC-8, but daylight savings (future version will allow user to enter their timezone)
     hour = Time.hour(); //Photon sets its time automatically the first time it connects to the cloud
 }
 
