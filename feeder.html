@@ -9,7 +9,7 @@
   <link rel='stylesheet' href='styles.css'>
   <link rel='icon shortcut' href='images/icon.png'>
 </head>
-<body onload='onLoad()'>
+<body>
   <div id='header' onclick='goHome()'></div>
   <div id='navBar'></div>
   <div class='content'>
@@ -461,11 +461,18 @@
     </div>
     <div id='hopperControls'>
       <h2> Seed Level </h2>
-      <div id='seedLevel'> Reading seed level... </div><br><br>
+      <div id='seedLevel'> Enter Device ID and Access Token to connect to your device. </div><br><br>
       <h2> Controls </h2>
       <button id='feedBird' onclick='dispense()'> Dispense Seeds </button><br><br>
       <span id='dispensing'></span><br><br>
     </div> <!-- end of hopperControls -->
+    <div class='login'>
+      Device ID: <br>
+      <input type='text' id='feederID' size='30'>
+      <button id='connect' onclick='connect()'>Connect</button><br><br>
+      Access Token: <br>
+      <input type='text' id='feederToken' size='40'><br><br>
+    </div>
   </div> <!-- end of content div -->
   <div id='footer'></div>
 </body>

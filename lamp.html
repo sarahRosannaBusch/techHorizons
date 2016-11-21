@@ -9,7 +9,7 @@
   <link rel='stylesheet' href='styles.css'>
   <link rel='icon shortcut' href='images/icon.png'>
 </head>
-<body onload='loadLamp()'>
+<body>
   <div id='header' onclick='goHome()'></div>
   <div id='navBar'></div>
   <div class='content'>
@@ -29,8 +29,15 @@
       <button id='auto' class='lightSwitch' onclick='lamp("auto")'> Auto </button><br><br>
     </div>
     <div id='lightPanel'>
-      <h2> Please wait...</h2>
-      <p> Connecting to device.</p>
+      <h2> Connect your device</h2>
+      <p> Enter your Device ID and Access Token to connect.</p>
+    </div>
+    <div class='login'>
+      Device ID: <br>
+      <input type='text' id='lampID' size='30'>
+      <button onclick='connect()'>Connect</button><br><br>
+      Access Token: <br>
+      <input type='text' id='lampToken' size='40'><br><br>
     </div>
   </div> <!-- end of content div -->
   <div id='footer'></div>

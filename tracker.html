@@ -9,7 +9,7 @@
   <link rel='stylesheet' href='styles.css'>
   <link rel='icon shortcut' href='images/icon.png'>
 </head>
-<body onload='onload()'> <!-- gets battery info when the page loads -->
+<body> <!-- gets battery info when the page loads -->
   <div id='header' onclick='goHome()'></div>
   <div id='navBar'></div>
   <div class='content'>
@@ -20,17 +20,25 @@
     </div>
     <div id='trackerData'>
       <h2> GPS Data </h2>
-      <div id='gpsData'> Aquiring signal, please wait...</div>
+      <div id='gpsData'> Enter your Device ID and Access Token to connect.</div>
       <div id='readTime'></div>
       <br>
       <h2> Battery Levels </h2>
-      <div id='batteryVolts'> Checking battery...</div>
+      <div id='batteryVolts'></div>
       <div id='batteryLevel'></div>
+    </div>
+    <div class='login'>
+      Device ID: <br>
+      <input type='text' id='trackerID' size='30'>
+      <button onclick='connect()'>Connect</button><br><br>
+      Access Token: <br>
+      <input type='text' id='trackerToken' size='40'><br><br>
     </div>
   </div> <!-- end of content div -->
   <div id='footer'></div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<!--script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script-->
 <script src='scripts.js'> </script>
 <script src='tracker.js'></script>
 </html>

@@ -142,6 +142,35 @@ h2
   text-shadow: 1px 1px black;
 }
 
+div.login
+{
+  width: 100%;
+  float: left;
+  margin-top: 20px;
+  text-align: center;
+}
+
+input[type=text]
+{
+    background-color: white;
+    border: rgba(112, 128, 144, 0.5) 3px solid;
+}
+
+/* Thanks to http://stackoverflow.com/questions/2920306/google-chrome-form-autofill-and-its-yellow-background for this one: */
+input:-webkit-autofill
+{
+  /* covers up the ugly yellow that chrome wants to change it to after using their autofil */
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+
+@media only screen and (min-width: 500px) /* bigger than a phone */
+{
+  div.login
+  {
+    margin-top: 50px;
+  }
+}
+
 @media only screen and (min-width: 850px) /* full-screen */
 {
   div#content

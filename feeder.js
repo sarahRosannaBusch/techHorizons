@@ -1,14 +1,17 @@
-var deviceID = "420018000a51353335323536"; //change these to your device's
-var accessToken = "4ed978c8d44ee74e0da0a2e08db5dcd401ce9958"; //eventually these values will be obtained from a user form
+var deviceID = ""; //change these to your device's
+var accessToken = ""; //eventually these values will be obtained from a user form
 var timer; //for dispensing animation
 
-function onLoad()
+function connect()
 {
+  deviceID = document.getElementById('feederID').value;
+  accessToken = document.getElementById('feederToken').value;
   measureSeeds();
 }
 
 function measureSeeds() //runs the 'readSeeds' function in the device's firmware
 {
+  document.getElementById('seedLevel').innerHTML = "Measuring...";
   $.ajax({
     type: "POST",
     url: "https://api.particle.io/v1/devices/" + deviceID + "/readSeeds?access_token=" + accessToken,

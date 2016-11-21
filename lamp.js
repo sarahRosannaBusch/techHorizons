@@ -1,9 +1,20 @@
 var deviceID = ""; //change these to your device's
 var accessToken = ""; //eventually these values will be obtained from a user form
 
+function connect()
+{
+  deviceID = document.getElementById('lampID').value;
+  accessToken = document.getElementById('lampToken').value;
+  loadLamp();
+}
+
 function loadLamp() //when the page is loaded it determines the current status of the lamp
 {
   disableButtons(); //so light switches can't be clicked until page is ready
+  document.getElementById('lightPanel').innerHTML =
+    "<h2> Please wait... </h2>" +
+    "<p> Connecting to device. </p>"
+    ;
 
   //reference: http://stackoverflow.com/questions/17156332/jquery-ajax-how-to-handle-timeouts-best
   $.ajax({
@@ -21,18 +32,20 @@ function loadLamp() //when the page is loaded it determines the current status o
     error: function(request, status, err)
     {
       enableButtons(); //now settings can be changed
-      if(status == "timeout")
-      {
+      //if(status == "timeout")
+      //{
         document.getElementById('lightPanel').innerHTML =
         "<h2> Device not found </h2>" +
         "<p> Please make sure your device is connected to Wifi and power, then refresh this page. </p>"
         ;
-      }
-      else
+      //}
+      /*else
       {
         document.getElementById('lightPanel').innerHTML =
-        "error: " + request + status + err;
-      }
+        "<h2> Device not found </h2>" +
+        "<p> Make sure you've entered the correct credentials. </p>"
+        ;
+      }*/
     }
   });
 }
@@ -55,16 +68,16 @@ function lamp(setting) //lamp controls
     error: function(request, status, err)
     {
       enableButtons();
-      if(status == "timeout")
-      {
+      //if(status == "timeout")
+      //{
         document.getElementById(setting).className = 'deadSwitch';
         settingDisplay(setting);
-      }
-      else
-      {
-        document.getElementById('lightPanel').innerHTML =
-        "error: " + request + status + err;
-      }
+      //}
+      //else
+      //{
+        //document.getElementById('lightPanel').innerHTML =
+        //"error: " + request + status + err;
+      //}
     }
   });
 }
