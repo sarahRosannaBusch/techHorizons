@@ -32,7 +32,7 @@ h1.title
   padding: 0px;
 }
 
-p.subtitle
+h2.subtitle
 {
   font-size: 15px;
   color: slategrey;
@@ -142,6 +142,35 @@ h2
   text-shadow: 1px 1px black;
 }
 
+div.login
+{
+  width: 100%;
+  float: left;
+  margin-top: 20px;
+  text-align: center;
+}
+
+input[type=text]
+{
+    background-color: white;
+    border: rgba(112, 128, 144, 0.5) 3px solid;
+}
+
+/* Thanks to http://stackoverflow.com/questions/2920306/google-chrome-form-autofill-and-its-yellow-background for this one: */
+input:-webkit-autofill
+{
+  /* covers up the ugly yellow that chrome wants to change it to after using their autofil */
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+
+@media only screen and (min-width: 500px) /* bigger than a phone */
+{
+  div.login
+  {
+    margin-top: 50px;
+  }
+}
+
 @media only screen and (min-width: 850px) /* full-screen */
 {
   div#content
@@ -203,10 +232,42 @@ li
 }
 
 /******************************* Pet Tracker **********************************/
+div#map
+{
+  width: 100%;
+  text-align: center;
+}
 
 iframe#map
 {
   max-width: 100%;
+}
+
+div#trackerData
+{
+  width: 100%;
+  background: rgba(112, 128, 144, 0.5);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 700px) /* wider screen layout */
+{
+  div#map
+  {
+    width: 40%;
+    float: left;
+    text-align: left;
+  }
+
+  div#trackerData
+  {
+    width: 55%;
+    float: left;
+    margin-top: 0px;
+    margin-left: 20px;
+    min-height: 300px;
+  }
 }
 
 /******************************* Bird Feeder **********************************/
@@ -218,9 +279,53 @@ div#hopperControls
   margin-bottom: 20px;
   text-align: center;
   color: white;
+  width: 100%;
 }
 
-button.feedBird
+div#feederBox
+{
+  text-align: center;
+  width: 100%;
+}
+
+svg#feederPic
+{
+  margin-bottom: 20px;
+  margin-top: 20px;
+  max-width: 100%;
+}
+
+g#seedsFull
+{
+  visibility: hidden;
+}
+
+g#seeds1Q
+{
+  visibility: hidden;
+}
+
+g#seeds2Q
+{
+  visibility: hidden;
+}
+
+g#seeds3Q
+{
+  visibility: hidden;
+}
+
+g#fall1
+{
+  visibility: hidden;
+}
+
+g#fall2
+{
+  visibility: hidden;
+}
+
+button#feedBird
 {
   background: slategrey; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(slategrey, rgba(0,0,0,0), black, rgba(0,0,0,0), slategrey); /* For Safari 5.1 to 6.0 */
@@ -242,6 +347,21 @@ button.feedBird
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 500px) /* wider screen layout */
+{
+  div#hopperControls
+  {
+    width: 45%;
+    float: left;
+    margin-top: 20px;
+  }
+  div#feederBox
+  {
+    width: 50%;
+    float: left;
+  }
 }
 
 /************************************ Lamp ************************************/
@@ -328,8 +448,35 @@ div#lightPanel
 
 p.error
 {
-  font-size: oblique;
+  font-style: oblique;
   color: orange;
+  text-align: center;
+}
+
+div#customLight
+{
+  margin-top: 20px;
+  text-align: center;
+}
+
+p#instructions
+{
+  color: orange;
+}
+
+button#setLight
+{
+  padding: 5px;
+  width: 250px;
+  max-width: 75%;
+  margin-top: 10px;
+  font-family: fantasy;
+  font-size: 25px;
+  color: orange;
+  text-shadow: 1px 1px black;
+  background-color: white;
+  border: rgba(112, 128, 144, 0.5) 3px solid;
+  border-radius: 12px;
 }
 
 /* default is one column for small screens */
@@ -346,6 +493,20 @@ p.error
     margin-top: 0px;
     min-height: 320px;
     margin-left: 20px;
+  }
+}
+
+@media only screen and (min-width: 800px)
+{
+  div#autoDescription
+  {
+    width: 50%;
+    float: left;
+  }
+  div#customLight
+  {
+    width: 50%;
+    float: left;
   }
 }
 
@@ -395,6 +556,7 @@ div.logoColumn
 {
   width: 100%;
   float: right;
+  padding-top: 20px;
 }
 
 img#camosunLogo
