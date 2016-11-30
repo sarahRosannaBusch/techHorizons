@@ -1,6 +1,9 @@
 var deviceID = ""; //change these to your device's
 var accessToken = ""; //eventually these values will be obtained from a user form
 
+var wake = 7; //for auto setting
+var sleep = 23; //these default values are for if the device is offline
+
 function connect()
 {
   deviceID = document.getElementById('lampID').value;
@@ -24,9 +27,10 @@ function loadLamp() //when the page is loaded it determines the current status o
     dataType: "json",
     success: function(json)
     {
-      enableButtons(); //now settings can be changed
       var setting = json.result;
       document.getElementById(setting).className = 'activeSwitch';
+      enableButtons(); //now settings can be changed
+      getTimerSetting(); //gets the timer settings currently in the lamp
       settingDisplay(setting);
     },
     error: function(request, status, err)
@@ -36,7 +40,7 @@ function loadLamp() //when the page is loaded it determines the current status o
       //{
         document.getElementById('lightPanel').innerHTML =
         "<h2> Device not found </h2>" +
-        "<p> Please make sure your device is connected to Wifi and power, then refresh this page. </p>"
+        "<p> Please make sure your device is connected to Wifi and power, then try reconnecting. </p>"
         ;
       //}
       /*else
@@ -46,6 +50,32 @@ function loadLamp() //when the page is loaded it determines the current status o
         "<p> Make sure you've entered the correct credentials. </p>"
         ;
       }*/
+    }
+  });
+}
+
+function getTimerSetting()
+{
+  //how do I get these all as one packet?
+  $.ajax({
+    type: "GET",
+    url:  "https://api.particle.io/v1/devices/" + deviceID + "/wake?access_token=" + accessToken,
+    timeout: 2000,
+    dataType: "json",
+    success: function(json)
+    {
+      wake = json.result;
+    }
+  });
+
+  $.ajax({
+    type: "GET",
+    url:  "https://api.particle.io/v1/devices/" + deviceID + "/sleep?access_token=" + accessToken,
+    timeout: 2000,
+    dataType: "json",
+    success: function(json)
+    {
+      sleep = json.result;
     }
   });
 }
@@ -85,20 +115,8 @@ function lamp(setting) //lamp controls
 function settingDisplay(setting)
 {
   var description = "";
-  if(setting == 'auto')
-  {
-    description =
-    "<h2> Auto Setting </h3>" +
-    "<p> 6am - Warm Light </p>" +
-    "<p> 7am - Bright Light (only if the room is too dim) </p>" +
-    "<p> 6pm - Warm Light </p>" +
-    "<p> 9pm - Evening Light </p>" +
-    "<p> 10pm - Night Light </p>" +
-    "<p> 11pm - Lamp Off </p>" +
-    "<p> *These settings will also be fully customizable. </p>"
-    ;
-  }
-  else if(setting == "day")
+
+  if(setting == "day")
   {
     description =
     "<h2> Bright Light </h2>" +
@@ -133,6 +151,32 @@ function settingDisplay(setting)
     "<p> Whenever the lamp is powered on it will start on this setting. </p>"
     ;
   }
+  else if(setting == 'auto')
+  {
+    var dawn = wake-1;
+    var dusk = sleep-5;
+    var sunset = sleep-2;
+    var dark = sleep-1;
+
+    //fix bug: this loads too fast, values display as unknown on first connect
+    description =
+    "<div id='autoDescription'>" +
+      "<h2> Auto Setting </h3>" +
+      "<p>" + dawn + ":00 - Warm Light </p>" +
+      "<p>" + wake + ":00 - Bright Light </p><br>" +
+      "<p>" + dusk + ":00 - Warm Light </p>" +
+      "<p>" + sunset + ":00 - Evening Light </p>" +
+      "<p>" + dark + ":00 - Night Light </p>" +
+      "<p>" + sleep + ":00 - Lamp Off </p>" +
+    "</div>" +
+    "<div id='customLight'>" +
+      "<p id='instructions'> Enter the hour (4-12) that you would like to wake up, and the hour (18-24) of your bedtime. </p>" +
+      "Wake up: <input type='text' id='wake' size='2' value='" + wake + "'><br><br>" +
+      "Bedtime: <input type='text' id='sleep' size='2' value='" + sleep + "'><br>" +
+      "<button id='setLight' onclick='setTimer()'> Apply </button>" +
+    "</div>"
+    ;
+  }
 
   if(document.getElementById(setting).className == 'deadSwitch')
   {
@@ -140,6 +184,53 @@ function settingDisplay(setting)
   }
 
   document.getElementById('lightPanel').innerHTML = description;
+}
+
+function setTimer()
+{
+  //contraints on time settings are to avoid conflicts, this can be modified later for more user control
+  var temp = document.getElementById('wake').value;
+  if(temp=='4' || temp=='5' || temp=='6' || temp=='7' || temp=='8' || temp=='9' || temp=='10' || temp=='11' || temp=='12')
+  {
+    wake = temp;
+  }
+
+  temp = document.getElementById('sleep').value;
+  if(temp=='18' || temp=='19' || temp=='20' || temp=='21' || temp=='22' || temp=='23' || temp=='24')
+  {
+    sleep = temp;
+  }
+
+  $.ajax({
+    type: "POST",
+    url: "https://api.particle.io/v1/devices/" + deviceID + "/setMorning?access_token=" + accessToken,
+    data: {field1: wake},
+    timeout: 5000,
+    //dataType: "json",
+    success: function(json)
+    {
+      getTimerSetting(); //to make sure the display is showing what's actually happening in the lamp
+      settingDisplay("auto"); //update display
+    },
+    error: function(request, status, err)
+    {}
+  });
+
+  //this needs to be done for each setting because the Particle.function() can only take one argument :(
+  $.ajax({
+    type: "POST",
+    url: "https://api.particle.io/v1/devices/" + deviceID + "/setNight?access_token=" + accessToken,
+    data: {field1: sleep},
+    timeout: 5000,
+    //dataType: "json",
+    success: function(json)
+    {
+      getTimerSetting(); //to make sure the display is showing what's actually happening in the lamp
+      settingDisplay("auto"); //update display
+    },
+    error: function(request, status, err)
+    {}
+  });
 }
 
 function disableButtons()

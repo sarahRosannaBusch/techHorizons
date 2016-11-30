@@ -49,7 +49,8 @@ function subscribe() //look for Particle.publish() events
   var eventSource = new EventSource("https://api.particle.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
   eventSource.addEventListener("trackerData", function(e) {
             var parsedData = JSON.parse(e.data);
-            document.getElementById('gpsData').innerHTML = parsedData.data;
+            var fullData = parsedData.data;
+            document.getElementById('gpsData').innerHTML = fullData;
             document.getElementById('readTime').innerHTML = "Last update: " + parsedData.published_at;
         }, false);
 }

@@ -15,8 +15,11 @@ void setup()
     digitalWrite(gpsOn, LOW);
 
     //initialize batterystuff
+    //Particle.function("battery", fuelGauge);
     Particle.variable("batteryVolts", &batteryVoltage, STRING);
     Particle.variable("batteryLevel", &fuelLevel, STRING);
+
+    //Time.zone(-8);
 }
 
 void loop()

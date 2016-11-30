@@ -448,8 +448,35 @@ div#lightPanel
 
 p.error
 {
-  font-size: oblique;
+  font-style: oblique;
   color: orange;
+  text-align: center;
+}
+
+div#customLight
+{
+  margin-top: 20px;
+  text-align: center;
+}
+
+p#instructions
+{
+  color: orange;
+}
+
+button#setLight
+{
+  padding: 5px;
+  width: 250px;
+  max-width: 75%;
+  margin-top: 10px;
+  font-family: fantasy;
+  font-size: 25px;
+  color: orange;
+  text-shadow: 1px 1px black;
+  background-color: white;
+  border: rgba(112, 128, 144, 0.5) 3px solid;
+  border-radius: 12px;
 }
 
 /* default is one column for small screens */
@@ -466,6 +493,20 @@ p.error
     margin-top: 0px;
     min-height: 320px;
     margin-left: 20px;
+  }
+}
+
+@media only screen and (min-width: 800px)
+{
+  div#autoDescription
+  {
+    width: 50%;
+    float: left;
+  }
+  div#customLight
+  {
+    width: 50%;
+    float: left;
   }
 }
 
