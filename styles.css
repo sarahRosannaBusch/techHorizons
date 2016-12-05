@@ -122,11 +122,15 @@ div.navActive
 {
   div.nav
   {
-    font-size: 30px;
+    font-size: 20px;
+    max-width: 300;
+    min-width: 160;
   }
-  div.nav
+  div.navActive
   {
-    font-size: 30px;
+    font-size: 20px;
+    max-width: 300;
+    min-width: 160;
   }
 }
 
