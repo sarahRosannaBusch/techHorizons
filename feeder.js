@@ -12,12 +12,13 @@ function connect()
 function measureSeeds() //runs the 'readSeeds' function in the device's firmware
 {
   //reset graphic
+  document.getElementById('unkSeeds').style.visibility = 'hidden';
   document.getElementById('seedsFull').style.visibility = 'hidden';
   document.getElementById('seeds3Q').style.visibility = 'hidden';
   document.getElementById('seeds2Q').style.visibility = 'hidden';
   document.getElementById('seeds1Q').style.visibility = 'hidden';
 
-  document.getElementById('seedLevel').innerHTML = "Measuring...";
+  document.getElementById('seedLevel').innerHTML = "<p> Measuring... </p>";
   $.ajax({
     type: "POST",
     url: "https://api.particle.io/v1/devices/" + deviceID + "/readSeeds?access_token=" + accessToken,
@@ -62,9 +63,12 @@ function measureSeeds() //runs the 'readSeeds' function in the device's firmware
               msg = "Empty";
             }break;
             default:
-              msg = "Unknown Seed Level";
+            {
+              msg = "<p> Unknown Seed Level </p>";
+              document.getElementById('unkSeeds').style.visibility = 'visible';
+            }
           }
-          document.getElementById("seedLevel").innerHTML = "Seed Level: " + msg;
+          document.getElementById("seedLevel").innerHTML = "<p> Seed Level: " + msg + "</p>";
         },
         error: function(request, status, err)
         {}
@@ -74,6 +78,7 @@ function measureSeeds() //runs the 'readSeeds' function in the device's firmware
     {
       document.getElementById('seedLevel').innerHTML =
       "<p class='error'> Device not found :( </p>";
+      document.getElementById('unkSeeds').style.visibility = 'visible';
     }
   });
 }
@@ -82,7 +87,7 @@ function dispense()
 {
   document.getElementById('feedBird').disabled = true; //disable button
 
-  document.getElementById('dispensing').innerHTML = "Dispensing seeds...";
+  document.getElementById('dispensing').innerHTML = "<p> Dispensing seeds... </p>";
   timer = setInterval(svgDispense, 250); //runs animation
 
   $.ajax({
@@ -92,16 +97,17 @@ function dispense()
     dataType: "json",
     success: function(json)
     {
-      document.getElementById('dispensing').innerHTML = "Success!";
+      document.getElementById('dispensing').innerHTML = "<p> Success! </p>";
       measureSeeds();
       killAnimation();
       document.getElementById('feedBird').disabled = false; //enable button
     },
     error: function(request, status, err)
     {
-      document.getElementById('dispensing').innerHTML = "Dispense failed, please check your device.";
+      document.getElementById('dispensing').innerHTML = "<p> Dispense failed, please check your device. </p>";
       killAnimation();
       document.getElementById('feedBird').disabled = false; //enable button
+      document.getElementById('unkSeeds').style.visibility = 'visible';
     }
   });
 }

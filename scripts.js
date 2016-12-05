@@ -3,7 +3,7 @@ document.getElementById('header').innerHTML =
   "<img id='logo' src='images/logo.svg' />" +
   "<h1 class='title'> Tech Horizons </h1>" +
   "<h2 class='subtitle'>" +
-    "Proving the usefulness of the IoT" +
+    "Demonstrating the usefulness of the IoT" +
   "</h2>"
   ;
 

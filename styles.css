@@ -300,7 +300,6 @@ div#hopperControls
   padding: 20px;
   margin-bottom: 20px;
   text-align: center;
-  color: white;
   width: 100%;
 }
 
@@ -308,6 +307,7 @@ div#feederBox
 {
   text-align: center;
   width: 100%;
+  padding: 40px;
 }
 
 svg#feederPic
@@ -315,6 +315,11 @@ svg#feederPic
   margin-bottom: 20px;
   margin-top: 20px;
   max-width: 100%;
+}
+
+g#unkSeeds
+{
+  visibility: visible;
 }
 
 g#seedsFull

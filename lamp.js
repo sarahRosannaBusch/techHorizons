@@ -40,7 +40,7 @@ function loadLamp() //when the page is loaded it determines the current status o
       //{
         document.getElementById('lightPanel').innerHTML =
         "<h2> Device not found </h2>" +
-        "<p> Please make sure your device is connected to Wifi and power, then try reconnecting. </p>"
+        "<p> Please make sure your device is connected to Wifi and power. </p>"
         ;
       //}
       /*else
@@ -134,21 +134,21 @@ function settingDisplay(setting)
   {
     description =
     "<h2> Evening Light </h2>" +
-    "<p> This setting provides light without preventing melatonin production, to get your body ready to sleep. </p>"
+    "<p> This setting provides light without preventing melatonin production, to prepare your body for sleep. </p>"
     ;
   }
   else if(setting == "night")
   {
     description =
     "<h2> Night Light </h2>" +
-    "<p> For those times you need to see in the dark without getting blinded. </p>"
+    "<p> This setting provides only red light for when you need to get up during the night. </p>"
     ;
   }
   else if(setting == "off")
   {
     description =
     "<h2> Lamp Off </h2>" +
-    "<p> Whenever the lamp is powered on it will start on this setting. </p>"
+    "<p> This setting is the default whenver the lamp is connected to power. </p>"
     ;
   }
   else if(setting == 'auto')
