@@ -15,6 +15,8 @@ function connect()
 function battery()
 {
   document.getElementById('batteryVolts').innerHTML = "Checking battery...";
+  document.getElementById('batteryLevel').innerHTML = "";
+  
     $.ajax({
       type: "GET",
       url: "https://api.particle.io/v1/devices/" + deviceID + "/batteryVolts?access_token=" + accessToken,
@@ -26,6 +28,7 @@ function battery()
       error: function(request, status, err)
       {
         document.getElementById('batteryVolts').innerHTML = "Battery voltage: n/a";
+        document.getElementById('batteryLevel').innerHTML = "";
       }
     });
     $.ajax({
@@ -58,6 +61,7 @@ function subscribe() //look for Particle.publish() events
 function myMap()
 {
   //this is based on the w3school google maps example
+  //waiting on Emily to get the Google API set up with her account to connect this
   var mapOptions =
   {
     center: new google.maps.LatLng(lat, lon),

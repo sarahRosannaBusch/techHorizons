@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-body
+body /* default values */
 {
   background-color: black;
   font-family: sans-serif;
@@ -150,6 +150,12 @@ div.login
   text-align: center;
 }
 
+p.error
+{
+  font-style: oblique;
+  color: orange;
+}
+
 input[type=text]
 {
     background-color: white;
@@ -171,12 +177,12 @@ input:-webkit-autofill
   }
 }
 
-@media only screen and (min-width: 850px) /* full-screen */
+@media only screen and (min-width: 900px) /* full-screen */
 {
-  div#content
+  div.content
   {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
   }
 }
 
@@ -202,10 +208,21 @@ div.frame
   margin-bottom: 20px;
 }
 
-img.profilePic
+div.threeCols
+{
+  width: 100%;
+}
+
+img.device
 {
   width: 100%;
   max-width: 250px;
+}
+
+img.profilePic
+{
+  width: 250px;
+  height: 250px;
 }
 
 ul
@@ -228,6 +245,12 @@ li
   div.frame
   {
     width: 95%;
+  }
+  div.threeCols
+  {
+    width: 33%;
+    float: left;
+    padding-right: 40px;
   }
 }
 
@@ -444,13 +467,6 @@ div#lightPanel
   padding: 25px;
   margin-top: 10px;
   margin-bottom: 15px;
-}
-
-p.error
-{
-  font-style: oblique;
-  color: orange;
-  text-align: center;
 }
 
 div#customLight

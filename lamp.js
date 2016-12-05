@@ -134,7 +134,7 @@ function settingDisplay(setting)
   {
     description =
     "<h2> Evening Light </h2>" +
-    "<p> This setting provides light without stimulating melatonin production, to get your body ready to sleep. </p>"
+    "<p> This setting provides light without preventing melatonin production, to get your body ready to sleep. </p>"
     ;
   }
   else if(setting == "night")
@@ -163,7 +163,8 @@ function settingDisplay(setting)
     "<div id='autoDescription'>" +
       "<h2> Auto Setting </h3>" +
       "<p>" + dawn + ":00 - Warm Light </p>" +
-      "<p>" + wake + ":00 - Bright Light </p><br>" +
+      "<p>" + wake + ":00 - Bright Light </p>" +
+      "<p> Daytime - Lamp will only turn on if the light level in the room is too low. </p>" +
       "<p>" + dusk + ":00 - Warm Light </p>" +
       "<p>" + sunset + ":00 - Evening Light </p>" +
       "<p>" + dark + ":00 - Night Light </p>" +
@@ -173,7 +174,7 @@ function settingDisplay(setting)
       "<p id='instructions'> Enter the hour (4-12) that you would like to wake up, and the hour (18-24) of your bedtime. </p>" +
       "Wake up: <input type='text' id='wake' size='2' value='" + wake + "'><br><br>" +
       "Bedtime: <input type='text' id='sleep' size='2' value='" + sleep + "'><br>" +
-      "<button id='setLight' onclick='setTimer()'> Apply </button>" +
+      "<button id='setLight' onclick='setTimer()'> Apply </button><br><br>" +
     "</div>"
     ;
   }

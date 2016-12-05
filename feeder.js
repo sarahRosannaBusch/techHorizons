@@ -11,6 +11,12 @@ function connect()
 
 function measureSeeds() //runs the 'readSeeds' function in the device's firmware
 {
+  //reset graphic
+  document.getElementById('seedsFull').style.visibility = 'hidden';
+  document.getElementById('seeds3Q').style.visibility = 'hidden';
+  document.getElementById('seeds2Q').style.visibility = 'hidden';
+  document.getElementById('seeds1Q').style.visibility = 'hidden';
+
   document.getElementById('seedLevel').innerHTML = "Measuring...";
   $.ajax({
     type: "POST",
@@ -67,7 +73,7 @@ function measureSeeds() //runs the 'readSeeds' function in the device's firmware
     error: function(request, status, err)
     {
       document.getElementById('seedLevel').innerHTML =
-      "Device not found :(";
+      "<p class='error'> Device not found :( </p>";
     }
   });
 }
@@ -82,7 +88,7 @@ function dispense()
   $.ajax({
     type: "POST",
     url: "https://api.particle.io/v1/devices/" + deviceID + "/servo?access_token=" + accessToken,
-    timeout: 5000,
+    //timeout: 5000,
     dataType: "json",
     success: function(json)
     {
