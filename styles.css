@@ -203,14 +203,6 @@ input:-webkit-autofill
   }
 }
 
-@media only screen and (min-width: 1500px) /* tv, projector, etc */
-{
-  p
-  {
-    font-size: 20px;
-  }
-}
-
 /******************************** Team Bios ***********************************/
 
 div.text
