@@ -7,12 +7,20 @@ body /* default values */
 {
   background-color: black;
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 14;
   color: lightgrey;
   margin: 0px;
   padding: 0px;
 }
 
+/* default styles are for phone-sized screens; layout is responsive: */
+@media only screen and (min-width: 1500px) /* tv, projector, etc */
+{
+  body
+  {
+    font-size: 20;
+  }
+}
 
 /****************************** Header Styles *********************************/
 
@@ -110,7 +118,7 @@ div.navActive
   display: inline-block;
 }
 
-@media only screen and (min-width: 1000px) /* tv, projector, etc */
+@media only screen and (min-width: 1500px) /* tv, projector, etc */
 {
   div.nav
   {
