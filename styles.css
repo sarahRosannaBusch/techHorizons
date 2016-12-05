@@ -14,11 +14,11 @@ body /* default values */
 }
 
 /* default styles are for phone-sized screens; layout is responsive: */
-@media only screen and (min-width: 1000px) /* tv, projector, etc */
+@media only screen and (min-width: 2000px) /* tv, projector, etc */
 {
   body
   {
-    font-size: 30;
+    font-size: 20;
   }
 }
 
@@ -118,7 +118,7 @@ div.navActive
   display: inline-block;
 }
 
-@media only screen and (min-width: 1000px) /* tv, projector, etc */
+@media only screen and (min-width: 2000px) /* tv, projector, etc */
 {
   div.nav
   {
