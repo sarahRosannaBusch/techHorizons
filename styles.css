@@ -612,39 +612,39 @@ p.footer
   }
 }
 
-@media only screen and (min-width: 1300px) /* tv, projector, etc */
+@media only screen and (min-width: 12500px) /* tv, projector, etc */
 {
   div.nav
   {
-    font-size: 20px;
+    font-size: 18px;
     max-width: 300;
     min-width: 160;
   }
 
   div.navActive
   {
-    font-size: 20px;
+    font-size: 18px;
     max-width: 300;
     min-width: 160;
   }
 
   p
   {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   button.lightSwitch
   {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   button.activeSwitch
   {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   button.deadSwitch
   {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
