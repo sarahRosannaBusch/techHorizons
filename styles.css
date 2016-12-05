@@ -7,18 +7,18 @@ body /* default values */
 {
   background-color: black;
   font-family: sans-serif;
-  font-size: 14;
+  font-size: 14px;
   color: lightgrey;
   margin: 0px;
   padding: 0px;
 }
 
 /* default styles are for phone-sized screens; layout is responsive: */
-@media only screen and (min-width: 2000px) /* tv, projector, etc */
+@media only screen and (min-width: 1000px) /* tv, projector, etc */
 {
   body
   {
-    font-size: 20;
+    font-size: 20px;
   }
 }
 
@@ -126,6 +126,7 @@ div.navActive
     max-width: 300;
     min-width: 160;
   }
+
   div.navActive
   {
     font-size: 20px;
