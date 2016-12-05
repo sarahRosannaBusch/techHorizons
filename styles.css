@@ -13,6 +13,15 @@ body /* default values */
   padding: 0px;
 }
 
+/* default styles are for phone-sized screens; layout is responsive: */
+@media only screen and (min-width: 1000px) /* tv, projector, etc */
+{
+  body
+  {
+    font-size: 30px;
+  }
+}
+
 /****************************** Header Styles *********************************/
 
 div#header
