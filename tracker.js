@@ -20,6 +20,7 @@ function battery()
     $.ajax({
       type: "GET",
       url: "https://api.particle.io/v1/devices/" + deviceID + "/batteryVolts?access_token=" + accessToken,
+      timeout: 5000,
       dataType: "json",
       success: function(json)
       {
@@ -35,6 +36,7 @@ function battery()
       type: "GET",
       url: "https://api.particle.io/v1/devices/" + deviceID + "/batteryLevel?access_token=" + accessToken,
       dataType: "json",
+      timeout: 5000,
       success: function(json)
       {
         document.getElementById('batteryLevel').innerHTML = "<p> Battery Level: " + json.result + "% </p>";
