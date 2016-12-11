@@ -46,10 +46,10 @@ document.getElementById("footer").innerHTML =
     "<a class='footer' href='https://docs.google.com/document/d/18PmsGwTxuioCkMh4xr2sk-mvoCNLXaenLL__o2moO4Y/edit?usp=sharing' target='_blank'> Team Bios</a><br>" +
     "<a class='footer' href='https://docs.google.com/presentation/d/1T_Pc-pBYF3uRTH0H3CspDlyI5SlaI0LQnETyy1axIBg/edit?usp=sharing' target='_blank'> Progress Presentation</a><br>" +
     "<a class='footer' href='https://docs.google.com/document/d/1VvYC1uVVuz1JXp5qReavqVJov-z56YZfo4vD6SrP93w/edit?usp=sharing' target='_blank'> Midterm Report</a><br>" +
-    "<a class='footer' href='https://drive.google.com/file/d/0ByfAtGh9cwuGN1ppOUNXbjFtT3c/view?usp=sharing' target='_blank'> Brochure </a><br>" +
-    "<a class='footer' href='https://docs.google.com/document/d/1SDHjUXbdgHbT9_vEoZYCRhwXQDwG7aCZ2x0LdFIWtRg/edit?usp=sharing' target='_blank'> User Manual </a><br>" +
-    "<a class='footer' href='https://docs.google.com/presentation/d/15xnPCVLmd-Z9RsnIzxeshVLgRvQv6Uxz7mjTYehDL6w/edit?usp=sharing' target='_blank'> Final Presentation </a><br>" +
-    "<a class='footer' href='https://docs.google.com/document/d/1Eea6VMxiJgmzj2OrjCBYmOR2B2ZyoOj5BfFNmca9RWQ/edit?usp=sharing' target='_blank'> Formal Report </a><br>" +
+    "<a class='footer' href='https://drive.google.com/file/d/0ByfAtGh9cwuGN1ppOUNXbjFtT3c/view?usp=sharing' target='_blank'> Brochure</a><br>" +
+    "<a class='footer' href='https://docs.google.com/presentation/d/15xnPCVLmd-Z9RsnIzxeshVLgRvQv6Uxz7mjTYehDL6w/edit?usp=sharing' target='_blank'> Final Presentation</a><br>" +
+    "<a class='footer' href='https://docs.google.com/document/d/1SDHjUXbdgHbT9_vEoZYCRhwXQDwG7aCZ2x0LdFIWtRg/edit?usp=sharing' target='_blank'> User Manual</a><br>" +
+    "<a class='footer' href='https://drive.google.com/file/d/0ByfAtGh9cwuGQ2tTX2ZDVHBhUEE/view?usp=sharing' target='_blank'> Formal Report</a><br>" +
     "<br>" +
   "</div>" +
   "<div class='logoColumn'>" +

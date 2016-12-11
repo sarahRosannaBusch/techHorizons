@@ -148,7 +148,7 @@ function settingDisplay(setting)
   {
     description =
     "<h2> Lamp Off </h2>" +
-    "<p> This setting is the default whenver the lamp is connected to power. </p>"
+    "<p> This setting is the default whenever the lamp is connected to power. </p>"
     ;
   }
   else if(setting == 'auto')

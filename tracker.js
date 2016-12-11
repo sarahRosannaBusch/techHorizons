@@ -1,8 +1,8 @@
 var deviceID = ""; //change these to your device's
 var accessToken = "";
 
-var lat = 51.5; //once the gps actually sees a satellite it will update these
-var lon = -0.12; //need to get a google maps API key to have the map display these coords
+var lat; //once the gps actually sees a satellite it will update these
+var lon; //need to get a google maps API key to have the map display these coords
 
 function connect()
 {
@@ -35,8 +35,8 @@ function battery()
     $.ajax({
       type: "GET",
       url: "https://api.particle.io/v1/devices/" + deviceID + "/batteryLevel?access_token=" + accessToken,
-      dataType: "json",
       timeout: 20000,
+      dataType: "json",
       success: function(json)
       {
         document.getElementById('batteryLevel').innerHTML = "<p> Battery Level: " + json.result + "% </p>";
