@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title> Tech Horizons </title>
+  <title> Bird Feeder </title>
   <meta charset='UTF-8'> <!-- 16-bit Unicode -->
   <meta name='author' content='Sarah Rosanna Busch'>
   <meta name='description' content="IoT seed dispenser for budgies.">
@@ -14,10 +14,10 @@
   <div id='navBar'></div>
   <div class='content'>
     <h1>
-      Budgie Feeder
+      Bird Feeder
     </h1>
     <p>
-      Press the button to give your pet some food when you can't be there to do it yourself.
+      Press the "Dispense Seeds" button to feed your pet when you can't be there to do it yourself.
     </p>
     <div id='feederBox'>
       <!-- pasting the svg here lets me modify it with css/js...
@@ -35,7 +35,7 @@
          width="39.782055mm"
          height="70.837776mm"
          viewBox="0 0 140.96004 250.99999"
-         id="feederPic"
+         id="svg3555"
          version="1.1"
          inkscape:version="0.91 r13725"
          sodipodi:docname="feeder.svg">
@@ -227,7 +227,7 @@
            inkscape:cx="65.5"
            inkscape:cy="125.49999"
            inkscape:document-units="px"
-           inkscape:current-layer="layer7"
+           inkscape:current-layer="layer6"
            showgrid="false"
            inkscape:window-width="1304"
            inkscape:window-height="745"
@@ -253,7 +253,8 @@
         <g
            inkscape:groupmode="layer"
            id="seeds1Q"
-           inkscape:label="seeds1Q">
+           inkscape:label="seeds1Q"
+           style="display:none">
           <path
              sodipodi:nodetypes="ccccc"
              inkscape:connector-curvature="0"
@@ -265,7 +266,8 @@
         <g
            inkscape:groupmode="layer"
            id="seeds2Q"
-           inkscape:label="seeds2Q">
+           inkscape:label="seeds2Q"
+           style="display:none">
           <path
              transform="translate(-311.64286,-332.57649)"
              sodipodi:nodetypes="ccccc"
@@ -277,7 +279,8 @@
         <g
            inkscape:groupmode="layer"
            id="seeds3Q"
-           inkscape:label="seeds3Q">
+           inkscape:label="seedsQ3"
+           style="display:none">
           <path
              transform="translate(-311.64286,-332.57649)"
              sodipodi:nodetypes="ccccc"
@@ -290,7 +293,8 @@
            inkscape:groupmode="layer"
            id="seedsFull"
            inkscape:label="seedsFull"
-           transform="translate(-311.64286,-332.5765)">
+           transform="translate(-311.64286,-332.5765)"
+           style="display:none">
           <path
              style="fill:#803300;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter3637)"
              d="m 325.48931,358.26942 0,86.10331 80.45113,81.06527 0,-167.16858 z"
@@ -301,7 +305,8 @@
         <g
            inkscape:groupmode="layer"
            id="fall2"
-           inkscape:label="fall2">
+           inkscape:label="fall2"
+           style="display:none">
           <path
              transform="matrix(0.77039212,0,0,0.77039212,-210.34453,-190.76234)"
              sodipodi:nodetypes="sss"
@@ -314,7 +319,8 @@
            inkscape:groupmode="layer"
            id="fall1"
            inkscape:label="fall1"
-           transform="translate(-311.64286,-332.5765)">
+           transform="translate(-311.64286,-332.5765)"
+           style="display:none">
           <path
              style="fill:#803300;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter3689)"
              d="m 452.00026,537.72062 c 7.43282,-11.62829 13.51087,12.2826 13.51087,12.2826 -12.17706,14.82706 -21.68966,0.51272 -13.51087,-12.2826 z"
@@ -325,8 +331,22 @@
         </g>
         <g
            inkscape:groupmode="layer"
-           id="layer6"
-           inkscape:label="fall1" />
+           id="unkSeeds"
+           inkscape:label="unknown"
+           style="display:inline">
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:86.02671814px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+             x="34.4683"
+             y="105.52047"
+             id="text3396"
+             sodipodi:linespacing="125%"
+             transform="scale(0.98913759,1.0109817)"><tspan
+               sodipodi:role="line"
+               id="tspan3398"
+               x="34.4683"
+               y="105.52047">?</tspan></text>
+        </g>
         <g
            inkscape:label="feeder"
            inkscape:groupmode="layer"
@@ -437,7 +457,7 @@
         </g>
         <g
            inkscape:groupmode="layer"
-           id="gateDown"
+           id="layer2"
            inkscape:label="gateDown">
           <path
              transform="translate(-311.64286,-332.57649)"
@@ -461,7 +481,7 @@
     </div>
     <div id='hopperControls'>
       <h2> Seed Level </h2>
-      <div id='seedLevel'> Enter Device ID and Access Token to connect to your device. </div><br><br>
+      <div id='seedLevel'><p> Enter Device ID and Access Token to connect to your device. </p></div><br><br>
       <h2> Controls </h2>
       <button id='feedBird' onclick='dispense()'> Dispense Seeds </button><br><br>
       <span id='dispensing'></span><br><br>

@@ -3,7 +3,7 @@ document.getElementById('header').innerHTML =
   "<img id='logo' src='images/logo.svg' />" +
   "<h1 class='title'> Tech Horizons </h1>" +
   "<h2 class='subtitle'>" +
-    "Proving the usefulness of the IoT" +
+    "Demonstrating the usefulness of the IoT" +
   "</h2>"
   ;
 
@@ -36,16 +36,21 @@ else
 document.getElementById("footer").innerHTML =
   "<hr class='footer'>" +
   "<div class='footerColumn'>" +
-    "<h3 class='footer'> ELEX 290 & ENGL 273 <br> Capstone Project By: </h3><br>" +
+    "<h3 class='footer'> ELEX 290 <br> Capstone Project By: </h3><br>" +
     "<p class='footer'> Sarah Rosanna Busch <br> and <br> Emily Claire Wolfe </p>" +
   "</div>" +
   "<div class='footerColumn'>" +
-    "<h3 class='footer'> Documentation: </h3>" +
+    "<h3 class='footer'> ENGL 273 <br> Documentation: </h3><br>" +
     "<a class='footer' href='https://docs.google.com/document/d/1NRvmEhG1d8bm2GLgIiouHB_C74hp-B3c0jHjvXk4gyE/edit?usp=sharing' target='_blank'> Project Proposal</a><br>" +
     "<a class='footer' href='https://docs.google.com/presentation/d/15NisVMKIx2EaC61caH7quVC5pXi4chDEDkeWaVqRR00/edit?usp=sharing' target='_blank'> Elevator Pitch</a><br>" +
     "<a class='footer' href='https://docs.google.com/document/d/18PmsGwTxuioCkMh4xr2sk-mvoCNLXaenLL__o2moO4Y/edit?usp=sharing' target='_blank'> Team Bios</a><br>" +
     "<a class='footer' href='https://docs.google.com/presentation/d/1T_Pc-pBYF3uRTH0H3CspDlyI5SlaI0LQnETyy1axIBg/edit?usp=sharing' target='_blank'> Progress Presentation</a><br>" +
     "<a class='footer' href='https://docs.google.com/document/d/1VvYC1uVVuz1JXp5qReavqVJov-z56YZfo4vD6SrP93w/edit?usp=sharing' target='_blank'> Midterm Report</a><br>" +
+    "<a class='footer' href='https://drive.google.com/file/d/0ByfAtGh9cwuGN1ppOUNXbjFtT3c/view?usp=sharing' target='_blank'> Brochure</a><br>" +
+    "<a class='footer' href='https://docs.google.com/presentation/d/15xnPCVLmd-Z9RsnIzxeshVLgRvQv6Uxz7mjTYehDL6w/edit?usp=sharing' target='_blank'> Final Presentation</a><br>" +
+    "<a class='footer' href='https://docs.google.com/document/d/1SDHjUXbdgHbT9_vEoZYCRhwXQDwG7aCZ2x0LdFIWtRg/edit?usp=sharing' target='_blank'> User Manual</a><br>" +
+    "<a class='footer' href='https://drive.google.com/file/d/0ByfAtGh9cwuGQ2tTX2ZDVHBhUEE/view?usp=sharing' target='_blank'> Formal Report</a><br>" +
+    "<br>" +
   "</div>" +
   "<div class='logoColumn'>" +
     "<img id='camosunLogo' src='images/camosunLogo.svg' />" +

@@ -5,20 +5,20 @@
 //Servo is connected to the 3.3V Vin (red), GND (brown), and a PWM pin (yellow)
 Servo myServo; //servo library is built in to the Particle P0 module being used
 const int servoPin = D1; //PWM
-int servoPos = 140; //the gate starts closed (can be any integer between 0 and 180)
+int servoPos = 170; //the gate starts closed (can be any integer between 0 and 180)
 
 //An led and four photoresistors will monitor seed levels in the hopper
 const int led = D0;
 
-const int fullPower = A1; //power the photoresistors
-const int twoPower = A3;
-const int onePower = A5;
-const int emptyPower = A7;
+const int fullPower = A7; //power the photoresistors
+const int twoPower = A5;
+const int onePower = A3;
+const int emptyPower = A1;
 
-const int readFull = A0; //read the photoresistors
-const int readTwo = A2;
-const int readOne = A4;
-const int readEmpty = A6;
+const int readFull = A6; //read the photoresistors
+const int readTwo = A4;
+const int readOne = A2;
+const int readEmpty = A0;
 
 int analogFull; //to store the values read off the photoresistors
 int analogTwo;
@@ -102,29 +102,24 @@ int readSeeds(String command) //detects seed level
 
     digitalWrite(led, LOW); //turns led off when it's not needed
 
-
-    if(analogFull < 50) //seeds are covering the top photoresistor (these values need calibration)
+    seedLevel = 4; //none of the photoresistors are covered (aka empty)
+    if(analogEmpty < 50) //seeds are covering the bottom photoresistor
+        seedLevel = 3; //one quarter left
+    if(analogOne < 10) //seeds are covering the third photoresistor from the top
+        seedLevel = 2; //two-quarters full
+    if(analogTwo < 50) //seeds are covering the second photoresistor
+        seedLevel = 1; //three-quarters full
+    if(analogFull < 60) //seeds are covering the top photoresistor (these values need calibration)
         seedLevel = 0; //full
-    else
-    {
-        if(analogFull > 50) //nothing is covering the top PR
-            seedLevel = 1; //two-thirds full
-        if(analogTwo > 50) //nothing is covering second one down
-            seedLevel = 2; //one-third full
-        if(analogOne > 50) //three PRs are uncovered
-            seedLevel = 3; //seeds low
-        if(analogEmpty > 50)
-            seedLevel = 4; //empty
-    }
 
     return 1;
 }
 
 int servoControl(String command) //gate is closed when servo is at 140 and open when at 40 (these numbers will need calibration)
 {
-    myServo.write(40);
+    myServo.write(180);
     delay(2000); //delay for amount of time it takes to dispense 1 tsp
-    myServo.write(140);
+    myServo.write(170);
     delay(100);
     return 1;
 }

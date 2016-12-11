@@ -204,7 +204,7 @@
      inkscape:cx="65.5"
      inkscape:cy="125.49999"
      inkscape:document-units="px"
-     inkscape:current-layer="layer7"
+     inkscape:current-layer="layer6"
      showgrid="false"
      inkscape:window-width="1304"
      inkscape:window-height="745"
@@ -229,8 +229,9 @@
   </metadata>
   <g
      inkscape:groupmode="layer"
-     id="layer3"
-     inkscape:label="seeds1Q">
+     id="seeds1Q"
+     inkscape:label="seeds1Q"
+     style="display:none">
     <path
        sodipodi:nodetypes="ccccc"
        inkscape:connector-curvature="0"
@@ -241,8 +242,9 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer4"
-     inkscape:label="seeds2Q">
+     id="seeds2Q"
+     inkscape:label="seeds2Q"
+     style="display:none">
     <path
        transform="translate(-311.64286,-332.57649)"
        sodipodi:nodetypes="ccccc"
@@ -253,8 +255,9 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer5"
-     inkscape:label="seedsQ3">
+     id="seeds3Q"
+     inkscape:label="seedsQ3"
+     style="display:none">
     <path
        transform="translate(-311.64286,-332.57649)"
        sodipodi:nodetypes="ccccc"
@@ -265,9 +268,10 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     id="seeds"
+     id="seedsFull"
      inkscape:label="seedsFull"
-     transform="translate(-311.64286,-332.5765)">
+     transform="translate(-311.64286,-332.5765)"
+     style="display:none">
     <path
        style="fill:#803300;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter3637)"
        d="m 325.48931,358.26942 0,86.10331 80.45113,81.06527 0,-167.16858 z"
@@ -277,8 +281,9 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer7"
-     inkscape:label="fall2">
+     id="fall2"
+     inkscape:label="fall2"
+     style="display:none">
     <path
        transform="matrix(0.77039212,0,0,0.77039212,-210.34453,-190.76234)"
        sodipodi:nodetypes="sss"
@@ -289,9 +294,10 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     id="fallingSeeds"
+     id="fall1"
      inkscape:label="fall1"
-     transform="translate(-311.64286,-332.5765)">
+     transform="translate(-311.64286,-332.5765)"
+     style="display:none">
     <path
        style="fill:#803300;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter3689)"
        d="m 452.00026,537.72062 c 7.43282,-11.62829 13.51087,12.2826 13.51087,12.2826 -12.17706,14.82706 -21.68966,0.51272 -13.51087,-12.2826 z"
@@ -302,8 +308,22 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer6"
-     inkscape:label="fall1" />
+     id="unkSeeds"
+     inkscape:label="unknown"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:86.02671814px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="34.4683"
+       y="105.52047"
+       id="text3396"
+       sodipodi:linespacing="125%"
+       transform="scale(0.98913759,1.0109817)"><tspan
+         sodipodi:role="line"
+         id="tspan3398"
+         x="34.4683"
+         y="105.52047">?</tspan></text>
+  </g>
   <g
      inkscape:label="feeder"
      inkscape:groupmode="layer"
@@ -425,7 +445,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     id="gate"
+     id="gateUp"
      inkscape:label="gateUp"
      transform="translate(-311.64286,-332.5765)">
     <path

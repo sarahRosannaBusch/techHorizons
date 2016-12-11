@@ -40,7 +40,7 @@ function loadLamp() //when the page is loaded it determines the current status o
       //{
         document.getElementById('lightPanel').innerHTML =
         "<h2> Device not found </h2>" +
-        "<p> Please make sure your device is connected to Wifi and power, then try reconnecting. </p>"
+        "<p> Please make sure your device is connected to Wifi and power. </p>"
         ;
       //}
       /*else
@@ -134,21 +134,21 @@ function settingDisplay(setting)
   {
     description =
     "<h2> Evening Light </h2>" +
-    "<p> This setting provides light without stimulating melatonin production, to get your body ready to sleep. </p>"
+    "<p> This setting provides light without preventing melatonin production, to prepare your body for sleep. </p>"
     ;
   }
   else if(setting == "night")
   {
     description =
     "<h2> Night Light </h2>" +
-    "<p> For those times you need to see in the dark without getting blinded. </p>"
+    "<p> This setting provides only red light for when you need to get up during the night. </p>"
     ;
   }
   else if(setting == "off")
   {
     description =
     "<h2> Lamp Off </h2>" +
-    "<p> Whenever the lamp is powered on it will start on this setting. </p>"
+    "<p> This setting is the default whenever the lamp is connected to power. </p>"
     ;
   }
   else if(setting == 'auto')
@@ -163,7 +163,8 @@ function settingDisplay(setting)
     "<div id='autoDescription'>" +
       "<h2> Auto Setting </h3>" +
       "<p>" + dawn + ":00 - Warm Light </p>" +
-      "<p>" + wake + ":00 - Bright Light </p><br>" +
+      "<p>" + wake + ":00 - Bright Light </p>" +
+      "<p> Daytime - Lamp will only turn on if the light level in the room is too low. </p>" +
       "<p>" + dusk + ":00 - Warm Light </p>" +
       "<p>" + sunset + ":00 - Evening Light </p>" +
       "<p>" + dark + ":00 - Night Light </p>" +
@@ -173,7 +174,7 @@ function settingDisplay(setting)
       "<p id='instructions'> Enter the hour (4-12) that you would like to wake up, and the hour (18-24) of your bedtime. </p>" +
       "Wake up: <input type='text' id='wake' size='2' value='" + wake + "'><br><br>" +
       "Bedtime: <input type='text' id='sleep' size='2' value='" + sleep + "'><br>" +
-      "<button id='setLight' onclick='setTimer()'> Apply </button>" +
+      "<button id='setLight' onclick='setTimer()'> Apply </button><br><br>" +
     "</div>"
     ;
   }

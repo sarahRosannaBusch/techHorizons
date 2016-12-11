@@ -3,11 +3,10 @@
     box-sizing: border-box;
 }
 
-body
+body /* default values */
 {
   background-color: black;
   font-family: sans-serif;
-  font-size: 14;
   color: lightgrey;
   margin: 0px;
   padding: 0px;
@@ -150,6 +149,12 @@ div.login
   text-align: center;
 }
 
+p.error
+{
+  font-style: oblique;
+  color: orange;
+}
+
 input[type=text]
 {
     background-color: white;
@@ -171,12 +176,12 @@ input:-webkit-autofill
   }
 }
 
-@media only screen and (min-width: 850px) /* full-screen */
+@media only screen and (min-width: 900px) /* full-screen */
 {
-  div#content
+  div.content
   {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
   }
 }
 
@@ -202,10 +207,21 @@ div.frame
   margin-bottom: 20px;
 }
 
-img.profilePic
+div.threeCols
+{
+  width: 100%;
+}
+
+img.device
 {
   width: 100%;
   max-width: 250px;
+}
+
+img.profilePic
+{
+  width: 250px;
+  height: 250px;
 }
 
 ul
@@ -228,6 +244,12 @@ li
   div.frame
   {
     width: 95%;
+  }
+  div.threeCols
+  {
+    width: 33%;
+    float: left;
+    padding-right: 40px;
   }
 }
 
@@ -278,7 +300,6 @@ div#hopperControls
   padding: 20px;
   margin-bottom: 20px;
   text-align: center;
-  color: white;
   width: 100%;
 }
 
@@ -286,6 +307,7 @@ div#feederBox
 {
   text-align: center;
   width: 100%;
+  padding: 40px;
 }
 
 svg#feederPic
@@ -293,6 +315,11 @@ svg#feederPic
   margin-bottom: 20px;
   margin-top: 20px;
   max-width: 100%;
+}
+
+g#unkSeeds
+{
+  visibility: visible;
 }
 
 g#seedsFull
@@ -446,13 +473,6 @@ div#lightPanel
   margin-bottom: 15px;
 }
 
-p.error
-{
-  font-style: oblique;
-  color: orange;
-  text-align: center;
-}
-
 div#customLight
 {
   margin-top: 20px;
@@ -519,9 +539,9 @@ div#footer
   font-family: monospace;
   color: black;
   background: orange; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(blue, green); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(slategrey, white); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(slategrey, white); /* For Firefox 3.6 to 15 */
+  background: -webkit-linear-gradient(red, orange, orange, red); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(red, orange, orange, red); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(red, orange, orange, red); /* For Firefox 3.6 to 15 */
   background: linear-gradient(red, orange, orange, red); /* Standard syntax */
   padding: 0px;
   margin-top: 20px;
@@ -594,5 +614,42 @@ p.footer
   div.footerColumn
   {
     width: 33%;
+  }
+}
+
+@media only screen and (min-width: 1200px) /* tv, projector, etc */
+{
+  div.nav
+  {
+    font-size: 18px;
+    max-width: 300;
+    min-width: 160;
+  }
+
+  div.navActive
+  {
+    font-size: 18px;
+    max-width: 300;
+    min-width: 160;
+  }
+
+  p
+  {
+    font-size: 18px;
+  }
+
+  button.lightSwitch
+  {
+    font-size: 18px;
+  }
+
+  button.activeSwitch
+  {
+    font-size: 18px;
+  }
+
+  button.deadSwitch
+  {
+    font-size: 18px;
   }
 }
