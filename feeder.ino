@@ -5,7 +5,7 @@
 //Servo is connected to the 3.3V Vin (red), GND (brown), and a PWM pin (yellow)
 Servo myServo; //servo library is built in to the Particle P0 module being used
 const int servoPin = D1; //PWM
-int servoPos = 170; //the gate starts closed (can be any integer between 0 and 180)
+int servoPos; //can be any integer between 0 and 180
 
 //An led and four photoresistors will monitor seed levels in the hopper
 const int led = D0;
@@ -117,9 +117,21 @@ int readSeeds(String command) //detects seed level
 
 int servoControl(String command) //gate is closed when servo is at 140 and open when at 40 (these numbers will need calibration)
 {
-    myServo.write(180);
-    delay(2000); //delay for amount of time it takes to dispense 1 tsp
-    myServo.write(170);
+    int speed = 100; //determines servo movement speed
+
+    for(int pos=130; pos<180; pos++)
+    {
+        myServo.write(pos); //180 degrees is open
+        delay(speed);
+    }
+
+    delay(2000); //2s to dispense 1 tsp
+
+    for(int pos=180; pos>130; pos--)
+    {
+        myServo.write(pos); //closed
+        delay(speed);
+    }
     delay(100);
     return 1;
 }
